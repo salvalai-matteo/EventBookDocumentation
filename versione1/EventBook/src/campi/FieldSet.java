@@ -3,7 +3,7 @@ package campi;
 import java.time.*;
 import java.util.ArrayList;
 
-/**Definisce una struttura dati con il compito di gestire di pi� campi
+/**Definisce una struttura dati con il compito di gestire di più campi
  * @author Matteo Salvalai [715827], Lorenzo Maestrini[715780], Jacopo Mora [715149]
  *
  */

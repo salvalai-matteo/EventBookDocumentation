@@ -3,8 +3,8 @@ package campi;
 /**La classe Campo ha il compito di fornire una struttura adatta a contenere una descrizione ed un valore
  * 
  * @author Matteo Salvalai [715827], Lorenzo Maestrini[715780], Jacopo Mora [715149]
- * Il valore che contiene puù essere di diversi tipi, per ogni campo questo deve essere specificato
- * @param <T> Il tipo di valore che un campo può contenere
+ * Il valore che contiene puÃ² essere di diversi tipi, per ogni campo questo deve essere specificato
+ * @param <T> Il tipo di valore che un campo puÃ² contenere
  */
 public class Field <T>{
 	//Attributi
