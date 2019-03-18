@@ -2414,11 +2414,11 @@
 								"$ref": "AAAAAAFpWGCdEjmazxQ="
 							},
 							"font": "Arial;13;0",
-							"left": 520,
+							"left": 512,
 							"top": 312,
-							"width": 169,
+							"width": 124.130859375,
 							"height": 66,
-							"text": "[fruitore vuole ritirare la proposta AND dataAttuale < termineUltimoRitiro]\n/invia avviso"
+							"text": "ritiro[dataAttuale < termineUltimoRitiro]\n/invia avviso"
 						}
 					]
 				}
