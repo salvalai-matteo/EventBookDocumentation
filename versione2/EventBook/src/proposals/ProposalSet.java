@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.stream.IntStream;
 
-import users.Notifiable;
+import users.User;
 
 /**
  * Un InsiemeProposte è un oggetto in grado di gestire un certo set di proposte, tutte quante nello stesso stato
@@ -70,7 +70,7 @@ public class ProposalSet extends ArrayList<Proposal> implements Serializable{
 	 * @param user l'utente da aggiungere alla proposta 
 	 * @return l'esito dell'iscrizione
 	 */
-	public synchronized boolean signUp(int id, Notifiable user) {
+	public synchronized boolean signUp(int id, User user) {
 		if(id < size())
 			return get(id).signUp(user);
 		return false;

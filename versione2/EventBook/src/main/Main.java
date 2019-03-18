@@ -116,7 +116,7 @@ public class Main {
 		protocol.logOut();
 	}
 	
-	private static Object acceptValue(FieldHeading field, String message) { //NUOVO MODO
+	private static Object acceptValue(FieldHeading field, String message) {
 		boolean valid = false;
 		Object obj = null;
 		do {
@@ -206,24 +206,15 @@ public class Main {
 			//inserisci valore del campo da modificare
 			Object obj = null;
 			if(!abort) {
-				/*do {
-					System.out.print("Inserisci il nuovo valore (" + field.getType().getSimpleName()+") : ");
-					String value = in.nextLine();
-					if(!field.isBinding() && value.isEmpty())
-						valid = true;
-					if(field.getClassType().isValidType(value)) {
-						obj = field.getClassType().parse(value);
-						valid = true;
-					}
-					if(!valid)
-						System.out.println("Il valore inserito non è corretto.\nInserisci qualcosa del tipo: " + field.getClassType().getSyntax());
-				}while(!valid);*/
 				obj = acceptValue(field, String.format("\tInserisci il nuovo valore (%s) : ", field.getType().getSimpleName()));
 				//conferma modifica
 				valid = false;
 				do {
 					System.out.println("Sei sicuro di voler modificare ?");
-					System.out.println("Proposta :" + id + ", Campo :" + field.getName() + ", nuovo valore: " + obj.toString());
+					String newValue = "";
+					if(obj!=null)
+						newValue = obj.toString();
+					System.out.println("Proposta :" + id + ", Campo :" + field.getName() + ", nuovo valore: " + newValue);
 					System.out.print("[y/n]> ");
 					String confirm = in.nextLine();
 					if(confirm.equalsIgnoreCase("n")) {
@@ -246,25 +237,6 @@ public class Main {
 					.filter(( fd )->event.containsField(fd.getName()))
 					.forEachOrdered(( fd )->{				
 						System.out.println(fd.toString());
-						/*boolean valid = false;
-						do {
-							System.out.print("\tInserisci un valore per il campo: ");
-							String value = in.nextLine();
-							if(!fd.isBinding() && value.isEmpty()) {
-								valid = true;
-								System.out.print(NEW_LINE);
-							}
-							if(fd.getClassType().isValidType(value)) {
-								valid = true;
-								if(event.setValue(fd.getName(), fd.getClassType().parse(value)))
-									System.out.println("\tDato inserito correttamente\n");
-								else
-									System.out.println("\tIl dato non è stato inserito correttamente\n");
-							}
-							if(!valid)
-								System.out.println(NEW_LINE + "\tIl dato inserito non è valido.\n\tInserisci qualcosa di tipo "
-														+ fd.getClassType().getSyntax() +"\n");
-						}while(!valid);*/
 						Object obj = acceptValue(fd, "\tInserisci un valore per il campo: ");
 						if(event.setValue(fd.getName(), obj))
 							System.out.println("\tDato inserito correttamente\n");

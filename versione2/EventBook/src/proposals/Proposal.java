@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import categories.Category;
 import users.Message;
-import users.Notifiable;
+import users.User;
 
 /**
  * Una proposta fa riferimento ad un particolare evento e consente di potersi iscrivere ad essa
@@ -26,20 +26,20 @@ public class Proposal implements Serializable{
 	/**
 	 * Il proprietario della proposta
 	 */
-	private Notifiable owner;
+	private User owner;
 	/**
 	 * Gli iscritti alla proposta
 	 */
-	private ArrayList<Notifiable> subscribers;
+	private ArrayList<User> subscribers;
 	/**
 	 * Costruttore di una proposta
 	 * @param event L'evento a cui farà riferimento la proposta
 	 * @param owner Il proprietario della proposta
 	 */
-	public Proposal(Category event, Notifiable owner) {
+	public Proposal(Category event, User owner) {
 		this.event = event;
 		this.owner = owner;
-		this.subscribers = new ArrayList<Notifiable>();
+		this.subscribers = new ArrayList<User>();
 		this.aState = State.INVALID;
 		//gestisce il caso in cui l'evento di riferimento sia già valido
 		update();
@@ -92,7 +92,7 @@ public class Proposal implements Serializable{
 	 * @param user il fruitore da iscrivere
 	 * @return True - l'utente è stato correttamente iscritto alla proposta<br>False - l'utente non è stato iscritto alla proposta
 	 */
-	public boolean signUp(Notifiable user) {
+	public boolean signUp(User user) {
 		if(aState.canSignUp(this)){
 			if(!owner.equals(user) && !subscribers.contains(user)) {
 				subscribers.add(user);

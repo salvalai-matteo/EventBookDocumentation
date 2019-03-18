@@ -1,0 +1,135 @@
+CASI D'USO V4 -> Riporta su WORD
+
+Nome: Registra utente (CASO D'USO VERSIONE 2)
+Attore: Fruitore
+Scenario principale:
+	Precondizione: L'utente non è ancora registrato
+	1. L'utente chiede di registrarsi
+	2. Il sistema chiede di inserire il nomignolo
+	3. L'utetne inserisce il nomignolo
+	4. Il sistema controlla che il nomignolo sia corretto
+	5. Il sistema richiede una fascia d'età
+	6. L'utente inserisce una fascia d'eta
+	7. Il sistema controlla che la fascia d'età sia corretta
+	8. Il sistema stampa l'insieme delle categorie disponibili
+	9. Il fruitore inserisce il nome della categoria d'interesse
+	10. Il sistema controlla che il nome sia corretto
+	11. Il sistema chiede se ne vuole inserire altre
+	12. L'utente comunica che non vuole più inserire categorie
+	13. Il sistema registra l'utente al sistema
+	Postcondizione: L'utente risulta registrato al sistema
+			L'utente nel sistema è univoco
+	Fine
+Scenario secondario:
+	Precondizione: L'utente non ha inserito un nome corretto
+	4a. Il sistema comunica che il nomignolo non è corretto
+	Fine
+Scenario secondario:
+	Precondizione: La fascia d'età inserita non è corretta
+	7a. Il sistema comunica che la fascia d'età non è corretta
+	Torna 5 
+	Fine
+Scenario secondario:
+	Precondizione: La categoria inserita non è corretta
+	11a. Il sistema comunica che la categoria non è corretta
+	Torna 9
+	Fine
+Scenario secondario:
+	Precondizione: L'utente comunica che vuole inserire un' altra categoria
+	Torna 9
+	Fine
+
+Nome: Modifica profilo
+Attore: Fruitore
+Scenario principale: 
+	Precondizione: L'utente è registrato e connesso al sistema
+	1. L'utente richiede di modificare il proprio profilo
+	2. Il sistema richiede di inserire il campo da modificare
+	3. L'utente inserisce il nome del campo da modificare
+	4. Il sistema controlla che il nome del campo inserito sia corretto
+	5. Il sistema richiede il nuovo valore
+	6. L'utente inserisce il nuovo valore
+	7. Il sistema controlla che il nuovo valore sia corretto
+	8. Il sistema modifica il campo
+	Postcondizione: Il profilo dell'utente è stato modificato
+			I profili degli altri utenti non sono stati modificati
+Scenario secondario:
+	Precondizione: Il nome del campo inserito non è corretto
+	4a. Il sistema comunica che il nome del campo inserito non è corretto
+	Postcondizione: Il profilo non è stato modificato
+	Fine
+Scenario secondario:
+	Precondizione: Il valore inserito non è corretto
+	8a. Il sistema comunica che il valore inserito non è corretto
+	Torna 6
+	Fine
+
+Nome: Mostra profilo
+Attore: Fruitore
+Scenario principale:
+	Precondizione: L'utente è registrato e connesso al sistema
+	1. L'utente richiede di visualizzare il suo profilo
+	2. Il sistema visualizza il profilo
+	Posticondizione: Il profilo non è stato modificato
+			 I profili degli altri utenti non sono stati modificati
+	Fine
+
+Nome: Invito
+Attore: Fruitore
+Scenario principale:
+	Precondizione: L'utente è registrato e connesso al sistema
+	1. L'utente richiede di invitare
+	2. Il sistema mostra le proposte pubblicate di cui il fruitore è proprietario
+	3. Il sistema richiede di inserire l'identificatore della proposta
+	4. L'utente inserisce l'identificatore
+	5. Il sistema controlla che l'identificatore inserito sia corretto
+	6. Il sistema richiede la modalità di invito
+	7. L'utente inserisce la modalità di invito
+	8. Il sistema gestisce la modalità di invito
+	Fine
+Scenario secondario:
+	Precondizione: L'utente ha scelto la modalità verso tutti
+	8a. <<Invito verso tutti>>
+	Fine
+Scenario secondario:
+	Precondizione: L'utente ha scelto la modalità a gruppi
+	8b. <<Invito verso gruppi>>
+	Fine
+Scenario secondario:
+	Precondizione: L'utente ha inserito una modalità non contemplata dal sistema
+	8c. Il sistema comunica che la modalità inserita non è valida
+	FIne
+
+Nome: Invito verso tutti
+Attore: Fruitore
+Scenario principale:
+	Precondizione: L'utente è registrato e connesso
+                       L'utente sa la proposta oggetto dell'invito
+	               L'utente vuole inviare inviti a tutti
+	1. Il sistema invia l'invito a tutti gli utenti papabili
+	Postcondizione: La notifica è stata inviata a tutti gli utenti papabili
+	Fine
+
+Nome: Invito verso gruppi
+Attore: Fruitore
+Scenario principale:
+	Precondizione: L'utente è registrato e connesso
+                        L'utente sa la proposta oggetto dell'invito
+	               L'utente vuole inviare inviti a un gruppo
+	1. Il sistema visualizza la lista degli utenti
+	2. Il sistema richiede il nomignolo dell'utente al quale inviare l'invito
+	3. L'utente inserisce il nomignolo
+	4. Il sistema controlla che il nomignolo inserito sia corretto
+	5. Il sistema chiede se vuole invitare altri utenti
+	6. L'utente comunica che non vuole invitare altri utenti
+	7. Il sistema invia l'invito a tutti gli utenti specificati
+	Postcondizione: La notifica è stata inviata a tutti gli utenti specificati
+	Fine
+Scenario secondario:
+	Precondizione: L'utente non ha inserito un nome corretto
+	4a. Il sistema comunica che il nomignolo non è corretto
+	Fine
+Scenario secondario:
+	Precondizione: L'utente comunica che vuole inserire un altro utente
+	Torna 3
+	Fine
