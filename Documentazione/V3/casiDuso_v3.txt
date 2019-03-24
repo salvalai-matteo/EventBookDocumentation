@@ -1,287 +1,627 @@
 CASI D'USO VERSIONE 3 
+
 --------------------------------------------------
+
 -----Importati da versioni precedenti-----
 
+
+
 Nome	Visualizza categoria
+
+Sintassi "categoria [categoryName]"
+
 Attore	Fruitore
+
 Scenario principale	   
+
 	Invariante: Il fruitore è registrato e connesso al sistema 
+
    	Precondizione: Esiste almeno una categoria ed è visibile al fruitore 
-		1.Il fruitore comunica al sistema che vuole visualizzare la categoria esistente
+
+		1. Il fruitore comunica al sistema che vuole visualizzare una categoria e ne specifica il nome
+
 		2.Il sistema mostra al fruitore le informazioni principali sulla categoria scelta    
+
    	Postcondizione: La categoria non è mutata dopo la sua visualizzazione 
+
    Fine
+
+--------------------------------------------------
 
 Nome	Visualizza caratteristiche
+
+Sintassi "descrizione [categoryName]"
+
 Attore	Fruitore
+
 Scenario principale
+
 	Invariante: Il fruitore è registrato e connesso al sistema 
-   	Precondizione: Esiste almeno una categoria ed è visibile al fruitore esistente
-		1.Il fruitore comunica al sistema che vuole visualizzare le caratteristiche della categoria esistente
-		2.Il sistema mostra al fruitore le caratteristiche della categoria 
+
+   	Precondizione: Esiste almeno una categoria ed è visibile al fruitore
+
+		1.Il fruitore comunica al sistema che vuole visualizzare le caratteristiche di una categoria e ne specifica il nome
+
+		2.Il sistema mostra al fruitore le caratteristiche della categoria scelta
+
    	Postcondizione: Le caratteristiche della categoria non sono state modificate 
+
    Fine
 
+--------------------------------------------------
 
 Nome:	Chiusura applicazione
+
 Attore:	Fruitore
 
+Sintassi "exit"
+
 Scenario principale:
+
 	Precondizione:	Il fruitore vuole smettere di usare il programma
+
 			1)Il fruitore comunica al sistema che vuole uscire
+
 			2)Il sistema comunica di aver ricevuto il messaggio e si chiude
+
 	Fine
+
+--------------------------------------------------
+
+-----Casi d'uso aggiunti v3---------------------------------------------
 
 Nome	Login fruitore
+
 Attore	Fruitore
+
+Sintassi "login [name]"
+
 Scenario principale	
-		1. L’utente richiede di effettuare il login
-		2.Il sistema richiede al fruitore di inserire un nickname
-		3.Il fruitore inserisce il nickname
-		4.Il sistema controlla che i dati inseriti corrispondano ad un fruitore già registrato 
-		5.Il sistema comunica che il login è avvenuto con successo 
+
+		1. L’utente richiede al sistema di effettuare il login, specificando il proprio nickname
+
+		2.Il sistema controlla che i dati inseriti corrispondano ad un fruitore già registrato 
+
+		3.Il sistema comunica che il login è avvenuto con successo 
+
    	Postcondizione: Il fruitore risulta connesso 
+
 	Fine
+
 Scenario secondario	    
+
 	Precondizione: Il fruitore ha inserito dati non corretti 
-		4a.Il sistema comunica che i dati inseriti non sono corretti 
+
+		3a.Il sistema comunica che i dati inseriti non sono corretti 
+
 	Fine
+
+--------------------------------------------------
+
 
 Nome	Logout fruitore
+
+Sintassi "logout"
+
 Attore	Fruitore
+
 Scenario principale	   
+
 	Precondizione: Il fruitore è connesso al sistema 
+
 		1.Il fruitore richiede di effettuare il logout 
+
 		2.Il sistema disconnette il fruitore 
+
 	Postcondizione: Il fruitore non risulta più connesso al sistema
+
 	Fine
+
+--------------------------------------------------
 
 Nome	Registrazione fruitore
+
+Sintassi "registra [name]"
+
 Attore	Fruitore
+
 Scenario principale	
-		1.Il fruitore richiede di effettuare la registrazione
-		2.Il sistema richiede al fruitore di inserire un nickname 
-		3.Il fruitore inserisce i dati richiesti 
-		4.Il sistema controlla che non esista un altro fruitore con lo stesso nickname 
-		5.Il sistema comunica che la registrazione è avvenuta con successo     
+
+		1.Il fruitore richiede al sistema di effettuare la registrazione, specificando un nickname 
+
+		2.Il sistema controlla che non esista un altro fruitore con lo stesso nickname 
+
+		3.Il sistema comunica che la registrazione è avvenuta con successo     
+
 	Postcondizione: Il fruitore risulta registrato
+
 	Fine
+
 Scenario secondario	     
+
 	Precondizione: Il fruitore ha inserito il nickname di un fruitore già registrato 
-		5a.Il sistema comunica che il nickname è già in uso 
+
+		3a.Il sistema comunica che il nickname è già in uso 
+
 	Fine
+
+--------------------------------------------------
 
 Nome	Leggere notifiche
+
+Sintassi	"mostraNotifiche"
+
 Attore	Fruitore
+
 Scenario principale	   
+
 	Invariante: Il fruitore è registrato e connesso al sistema 
+	
+	Precondizione: Il fruitore si trova all'interno del proprio spazio personale
+
 		1.Il fruitore richiede di leggere le notifiche 
-		2.Il sistema visualizza le notifiche presenti nello spazio virtuale
+
+		2.Il sistema visualizza le notifiche presenti nello spazio personale
+
 	Postcondizione: Lo spazio virtuale non è stato modificato 
+
 	Fine
+
 Scenario secondario	     
-	Precondizione: Non ci sono nuove notifiche (rispetto all'ultimo accesso) 
-		4a.Il sistema non visualizza ulteriori notifiche 
+
+	Precondizione: Non ci sono notifiche nello spazio personale
+
+		2a.Il sistema comunica che non ci sono notifiche
+
      Fine
 
+--------------------------------------------------
+
 Nome	Cancellare notifiche
+
+Sintassi	"rimuoviNotifica"
+
 Attore	Fruitore
+
 Scenario principale	  
+
 	Invariante: Il fruitore è registrato e connesso al sistema 
-  	Precondizione: Il fruitore conosce il contenuto dello spazio virtuale e sa che notifica cancellare 
-		1.Il fruitore richiede di cancellare una notifica
-		2.Il sistema richiede l’identificatore della notifica da rimuovere
-		3.Il fruitore inserisce l’identificatore
-		4.Il sistema controlla che la notifica da cancellare faccia parte dello spazio virtuale 
-		5.Il sistema cancella la notifica selezionata 
+
+  	Precondizione: Il fruitore si trova all'interno del proprio spazio personale
+		       Il fruitore conosce il contenuto dello spazio virtuale e sa che notifica cancellare 
+
+		1.Il fruitore richiede di cancellare una notifica, specificandone l'indentificatore
+
+		2.Il sistema controlla che la notifica da cancellare faccia parte dello spazio virtuale 
+
+		3.Il sistema cancella la notifica selezionata 
+
 	Postcondizione: La notifica non fa più parte dello spazio virtuale 
+
 	Fine
+
 Scenario secondario	     
+
 	Precondizione: Il sistema non trova la notifica richiesta dall'utente nel suo spazio virtuale 
-	5a.Il sistema comunica al fruitore che la notifica selezionata non fa parte del suo spazio virtuale 
+
+	3a.Il sistema comunica al fruitore che la notifica selezionata non fa parte del suo spazio virtuale 
+
 	Postcondizione: Lo spazio virtuale non è cambiato 
+
 	Fine
+
+
+--------------------------------------------------
 
 Nome	Creazione proposta
+
+Sintassi "crea"
+
 Attore	Fruitore
+
 Scenario principale	   
+
 	Invariante: Il fruitore è registrato e connesso al sistema 
+
 	Precondizione: Esiste una categoria 
+
                        Il fruitore sa già di che categoria vuole proporre un evento 
-		1.Il fruitore chiede di proporre un evento
+
+		1.Il fruitore chiede al sistema di poter creare un evento
+
 		2.Il sistema controlla che ci siano campi da compilare
+
 		3.Il sistema consente al fruitore di compilare il prossimo campo
+
 		4.Il fruitore compila il campo 
+
 		5.Il sistema controlla che il campo inserito sia corretto
+
 		6.Il sistema controlla che non ci siano più campi da compilare
+
 		7.Il sistema prende in carico la proposta di evento 
+
 	Postcondizione: La proposta ha i campi obbligatori compilati con dati corretti
+
 	Fine
+
 Scenario secondario	     
+
 	Precondizione: Il fruitore ha inserito dati non corretti 
+
 		6a.Il sistema comunica che i dati inseriti non sono nel formato corretto
+
      		Torna 3
+
      	Fine
+
 Scenario secondario	     
+
 	Precondizione: Il fruitore non ha compilato un campo obbligatoro 
+
 		6b.Il sistema comunica che il campo obbligatorio non è stato compilato
+
      		Torna 3
+
      	Fine
+
+Scenario secondario
+
+	Precondizione: Esistono altri campi da compilare
+
+		Torna 2
+	Fine
+
+--------------------------------------------------
 
 Nome	Visualizza bacheca
+
+Sintassi "mostraBacheca"
+
 Attore	Fruitore
+
 Scenario principale	   
+
 	Invariante: Il fruitore è registrato e connesso al sistema 
+
 		1.Il fruitore richiede di visualizzare la bacheca 
+
 		2.Il sistema controlla che la bacheca non sia vuota 
+
 		3.Il sistema visualizza le proposte in bacheca organizzandole per categoria
+
  	  Postcondizione: La bacheca non è stata modificata 
+
   	 Fine
+
 Scenario secondario	     
+
 	Precondizione: Non ci sono proposte in bacheca 
+
 		3a.Il sistema comunica che la bacheca è vuota 
+
      	Fine
+
+--------------------------------------------------
 
 Nome	Pubblicazione proposta
+
+Sintassi "pubblica [id]"
+
 Attore	Fruitore
+
 Scenario principale	   
+
 	Invariante: Il fruitore è registrato e connesso al sistema 
+
 	Precondizione: Il fruitore sa già che proposta pubblicare 
+
                        La proposta ha i campi obbligatori compilati 
+
                        Tutti i campi compilati della proposta sono corretti 
-		1.Il fruitore richiede di pubblicare una proposta
-		2.Il sistema richiede l’identificatore della proposta da inserire
-		3.Il fruitore inserisce l’identificatore
-		4.Il sistema controlla che la proposta sia in lavorazione dal sistema 
-		5.Il sistema aggiunge la proposta alla bacheca 
-		6.Il sistema iscrive il fruitore alla proposta come proprietario 
+
+		1.Il fruitore richiede di pubblicare una proposta e ne specifica l'identificatore
+
+		2.Il sistema controlla che la proposta sia in lavorazione dal sistema 
+
+		3.Il sistema aggiunge la proposta alla bacheca 
+
+		4.Il sistema iscrive il fruitore alla proposta come proprietario 
+
   	 Postcondizione: La proposta è visibile in bacheca 
+
                          Il fruitore è iscritto alla proposta 
+
                          La proposta appena pubblicata non è più presa in carico dal sistema 
+
    	Fine
+
 Scenario secondario	     
+
 	Precondizione: La proposta non è attualmente in lavorazione dal sistema 
-		5a.Il sistema comunica che la proposta non è attualmente in lavorazione
+
+		3a.Il sistema comunica che la proposta non è attualmente in lavorazione
+
      	Postcondizione: La proposta non è in bacheca 
+
      	Fine
+
+--------------------------------------------------
 
 Nome	Adesione proposta
+
+Sintassi "partecipa [id]"
+
 Attore	Fruitore
+
 Scenario principale	   
+
 	Invariante: Il fruitore è registrato e connesso al sistema 
+
                     La bacheca non è stata modificata 
+
    	Precondizione: Il fruitore sa già a che proposta aderire 
-		1.Il fruitore richiede di aderire ad una proposta
-		2.Il sistema richiede l’identificatore della proposta a cui aderire
-		3.Il fruitore inserisce l’identificatore
-		4.Il sistema controlla che la proposta sia effettivamente in bacheca 
-		5.Il sistema iscrive il fruitore 
+
+		1.Il fruitore richiede di aderire ad una proposta e ne specifica l'identificatore
+
+		2.Il sistema controlla che la proposta sia effettivamente in bacheca 
+
+		3.Il sistema iscrive il fruitore 
+
  	Postcondizione: Il fruitore è iscritto alla proposta 
+
                           Il numero di partecipanti è aumentato di 1 
+
    	Fine
+
 Scenario secondario	     
+
 	Precondizione: La proposta fornita non è in bacheca 
-		5a.Il sistema comunica che la proposta non è in bacheca 
+
+		3a.Il sistema comunica che la proposta non è in bacheca 
+
      	Fine
+
+
+--------------------------------------------------
 
 Nome	Mostra proposte in lavorazione
+
+Sintassi "mostraInLavorazione"
+
 Attore	Fruitore
+
 Scenario principale	   
+
 	Invariante: Il fruitore è registrato e connesso al sistema 
+
 		1.Il fruitore chiede al sistema di mostrare le proposte attualmente in lavorazione
+
 		2.Il sistema controlla di avere in lavorazione delle proposte 
+
 		3.Il sistema mostra le proposte prese in lavorazione
+
    	Postcondizione: Le proposte prese in lavorazione non sono variate 
+
    	Fine
+
 Scenario secondario	     
+
 	Precondizione: Il sistema non ha proposte in lavorazione
+
 		3a.Il sistema comunica di non avere attualmente proposte in lavorazione
+
      	Fine
 
+--------------------------------------------------
+
 Nome	Modifica proposta in lavorazione
+
+Sintassi "modifica [id]"
+
 Attore	Fruitore
+
 Scenario principale	   
+
 	Invariante: Il fruitore è registrato e connesso al sistema 
-		1.Il fruitore chiede al sistema di modificare una proposta attualmente in lavorazione
-		2.Il sistema richiede l’identificatore della proposta a cui aderire
-		3.Il fruitore inserisce l’identificatore
-		4.Il sistema controlla che l’identificatore corrisponda ad una proposta in lavorazione
-		5.Il sistema richiede il nome del campo da modificare
-		6.Il fruitore inserisce il nome del campo da modificare
-		7.Il sistema controlla che il nome inserito sia quello di un campo
-		8.Il sistema richiede il nuovo valore
-		9.Il fruitore inserisce il valore
-		10. Il sistema controlla che il valore sia corretto
-		11.Il sistema chiede conferma
-		12.Il fruitore conferma
-		13.Il sistema il sistema modifica la proposta
+
+		1.Il fruitore chiede al sistema di modificare una proposta attualmente in lavorazione e ne specifica l'identificatore
+
+		2.Il sistema controlla che l’identificatore corrisponda ad una proposta in lavorazione
+
+		3.Il sistema richiede il nome del campo da modificare
+
+		4.Il fruitore inserisce il nome del campo da modificare
+
+		5.Il sistema controlla che il nome inserito sia quello di un campo
+
+		6.Il sistema richiede il nuovo valore
+
+		7.Il fruitore inserisce il valore
+
+		8. Il sistema controlla che il valore sia corretto
+
+		9.Il sistema chiede conferma
+
+		10.Il fruitore conferma
+
+		11.Il sistema modifica la proposta
+
   	Postcondizione: Il valore del campo della proposta richiesta è stato cambiato
+
                          Tutte le altre proposte non sono cambiate
+
    	Fine
+
 Scenario secondario	     
+
 	Precondizione: L’identificatore inserito non corrisponde ad una proposta
-		4a.Il sistema comunica che l'identificatore non è corretto
+
+		2a.Il sistema comunica che l'identificatore non è corretto
+
      	Postcondizione: La proposta non è stata modificata
+
      	Fine
+
 Scenario secondario	     
+
 	Precondizione: Il nome inserito non corrisponde a quello di un campo
-		8a.Il sistema comunica che il nome non è corretto
+
+		6a.Il sistema comunica che il nome non è corretto
+
      	Postcondizione: La proposta non è stata modificata
+
      	Fine
+
 Scenario secondario	       
+
 	Precondizione: Il valore inserito non è corretto
-		11a.Il sistema comunica che il valore non è corretto
-       	Torna 8
+
+		9a.Il sistema comunica che il valore non è corretto
+
+       	Torna 6
+
        	Fine
+
 Scenario secondario	       
+
 	Precondizione: Il fruitore non conferma
-		13a.Il sistema comunica che non modificherà il valore
+
+		11a.Il sistema comunica che non modificherà il valore
+
        	Postcondizione: La proposta non è stata modificata
+
        	Fine
+
+--------------------------------------------------
 
 -----fine importati-----
 
+--------------------------------------------------
+
 Nome: Cancellazione iscrizione
+
+Sintassi: "disiscrivi"
+
 Attore: Fruitore
+
 Scenario principale:
-	
+
 	Precondizioni: 
+
 		Il fruitore è registarto e connesso al sistema
+
 		Il fruitore è iscritto ad almeno una proposta
+
 	1. Il fruitore chiede al sistema di poter cancellare un iscrizione	
-	2. Il fruitore inserisce l'identificativo (numero) della proposta dalla quale disiscriversi
-	3. Il sistema controlla che l'identificativo inserito sia corretto
-	Postcondizione: Il fruitore non compare nella lista degli iscritti alla proposta in esame
-Scenario secondario
 	
+	2. Il sistema stampa la lista delle proposte alle quali il fruitore è iscritto
+
+	3. Il fruitore inserisce l'identificativo (numero) della proposta dalla quale disiscriversi
+
+	4. Il sistema controlla che l'identificativo inserito sia corretto
+	
+	5. Il sistema rimuove il fruitore dalla lista degli iscritti
+
+	Postcondizione: Il fruitore non compare nella lista degli iscritti alla proposta in esame
+
+Scenario secondario
+
 	Precondizione: L'identificativo inserito è errato
-	3a. Il sistema comunica l'errore
+
+	5a. Il sistema comunica l'errore
+
 	Fine
 
+--------------------------------------------------
 
 Nome: Ritiro proposta
+
+Sintassi: ritira [id]
+
 Attore: Fruitore
+
 Scenario principale: 
 
 	Precondizioni:
+
 		Il fruitore è registrato e connesso al sistema 
+
 		Il fruitore sa già a che proposta ritirare
-	1. Il fruitore chiede al sistema di poter ritirare una proposta	
-	2. IL FRUITORE INSERISCE L'ID DELLA PROPOSTA DA RITIRARE
+
+	1. Il fruitore chiede al sistema di poter ritirare una proposta, specificandone l'identificatore
+	
+	2. Il sistema controlla che l'identificatore inserito sia corretto
+
 	3. Il sistema controlla se il fruitore è il proporietario della proposta
-	3. Il sistema ritira la proposta
+
+	4. Il sistema ritira la proposta
+
 	Postcondizioni: 
+
 		La propostsa è ritirata dalla bacheca
+
 		Gli iscritti sono notificati
+
 	Fine
+
 Scenario secondario
-	
+
 	Precondizione: L'identificativo inserito è errato
+
 	3a. Il sistema comunica l'errore
+
 	Fine
+
 Scenario secondario
 	
+
 	Precondizione: Il fruitore non è il proprietario
-	3b. Il sistema annulla l'operazione
-	4b. Il sistema comunica l'annullamento dell'operaziopne
+
+	4b. Il sistema annulla l'operazione
+
+	5b. Il sistema comunica l'annullamento dell'operaziopne
+
 	Fine
+
+--------------------------------------------------
+
+Nome	Accesso a spazio personale
+
+Sintassi "spazioPersonale"
+
+Attore	Fruitore
+
+Scenario principale	   
+
+	Invariante: Il fruitore è registrato e connesso al sistema 
+
+		1.Il fruitore chiede al sistema di accedere al proprio spazio personale
+
+		2.Il sistema permette al fruitore l'accesso al proprio spazio personale
+
+   	Postcondizione: Il fruitore si trova all'interno del proprio spazio personale
+
+   	Fine
+
+--------------------------------------------------
+
+Nome	Uscita da spazio personale
+
+Sintassi "back"
+
+Attore	Fruitore
+
+Scenario principale	   
+
+	Invariante: Il fruitore è registrato e connesso al sistema
+
+	Precondizione: Il fruitore si trova all'interno del proprio spazio personale 
+
+		1.Il fruitore chiede al sistema di uscire dal proprio spazio personale
+
+		2.Il sistema permette al fruitore l'uscita dal proprio spazio personale
+
+   	Postcondizione: Il fruitore non si trova all'interno del proprio spazio personale
+
+   	Fine
