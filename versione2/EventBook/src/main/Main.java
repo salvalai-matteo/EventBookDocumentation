@@ -27,8 +27,7 @@ public class Main {
 	
 	private static final String SAVE_COMPLETED = "completato";
 	private static final String SAVE_FAILED = "fallito";
-	
-	private static final String INSERT_IDENTIFIER = "Inserisci l'identificatore : ";
+
 	private static final String INSERT_NUMBER = "Inserisci un numero";
 
 	private static Timer refreshTimer;
@@ -142,52 +141,87 @@ public class Main {
 	 */
 	protected enum Command {
 		
-		EXIT("exit", "Esci dal programma",()->System.exit(0)),
-		CATEGORY("categoria", "Mostra la categoria disponibile", ()->{
-			Category p = CategoryCache.getInstance().getCategory(CategoryHeading.FOOTBALLMATCH.getName());
-			System.out.print(p.getDescription());
+		EXIT("exit", "Esci dal programma",(args)->{
+			if(!checkNoParameter(args))	
+				return false;
+			System.exit(0);
+			return true;
 		}),
-		DESCRIPTION("descrizione", "Mostra le caratteristiche della categoria disponibile", ()->{
-			Category p = CategoryCache.getInstance().getCategory(CategoryHeading.FOOTBALLMATCH.getName());
-			System.out.print(p.getFeatures());
+		CATEGORY("descrizione", "Mostra la categoria specificata\tSintassi: descrizione [categoryName]", (args)->{
+			if(args.length == 0){
+			 	System.out.println("Specifica il nome di una categoria");
+			  	return false;
+			}else if(Stream.of(CategoryHeading.values())
+			  					.anyMatch((fh)->fh.getName().equalsIgnoreCase(args[0]))){
+				System.out.print(Stream.of(CategoryHeading.values())
+			  								.filter((fh)->fh.getName().equalsIgnoreCase(args[0]))
+			  								.findFirst().get().toString());
+			  	return true;
+			 }else{
+				 System.out.println("Il nome inserito non appartiene ad una categoria esistente");
+			  	return false;
+			  }
 		}),
-		REGISTRATION("registra", "Registra un fruitore", ()->{
-			System.out.print("Inserisci il nome: ");
-			String name = in.nextLine();
-			if(database.register(name))
+		DESCRIPTION("caratteristiche", "Mostra le caratteristiche della categoria specificata\tSintassi: caratteristiche [categoryName]", (args)->{
+			if(args.length == 0){
+				System.out.println("Specifica il nome di una categoria");
+		  		return false;
+		  	}else if(Stream.of(CategoryHeading.values()).anyMatch((fh)->fh.getName().equalsIgnoreCase(args[0]))){
+		  		System.out.print(FieldSetFactory.getInstance().getSet(args[0]).getFeatures());
+		  		return true;
+		 	}else{
+		 		 System.out.println("Il nome inserito non appartiene ad una categoria esistente");
+		  		return false;
+		  	}
+		}),
+		REGISTRATION("registra", "Registra un fruitore\tSintassi: registra [name]", (args)->{
+			if(!checkOneParameter(args))
+				return false;
+			if(database.register(args[0])) {
 				System.out.println("L'utente è stato registrato con successo");
-			else
+				return true;
+			}
+			else {
 				System.out.println("L'utente è già esistente");
+				return false;
+			}
 		}),
-		LOGIN("login", "Accedi", ()->{
-			System.out.print("Inserisci il nome: ");
-			String name = in.nextLine();
+		LOGIN("login", "Accedi\tSintassi: login [name]", (args)->{	
+			if(!checkOneParameter(args))
+				return false;
+			String name = args[0];
 			if(database.contains(name)) {
 				session = new Session(database.getUser(name));
 				logIn();
 				System.out.println("Loggato come: " + name);
+				return true;
 			}
 			else {
 				System.out.println("Utente non registrato");
+				return false;
 			}
 		}),
-		LOGOUT("logout", "Per uscire", ()->{
+		LOGOUT("logout", "Per uscire", (args)->{
+			if(!checkNoParameter(args))
+				return false;
 			session = null;
 			logOut();
 			System.out.println("Logout eseguito");
+			return true;
 			}),
-		MODIFY("modifica","Modifica il campo di una proposta",()->{
+		MODIFY("modifica","Modifica il campo di una proposta\tSintassi: modifica [id]",(args)->{
+			if(!checkOneParameter(args))
+				return false;
 			boolean abort = false;
 			//inserisci id proposta
 			boolean valid = false;
 			int id = -1;
 			try {
-				System.out.print(INSERT_IDENTIFIER);
-				id = Integer.parseInt(in.nextLine());
+				id = Integer.parseInt(args[0]);
 				if(!session.contains(id)) {
 					abort = true;
 				}
-			}catch(Exception e) {
+			}catch(NumberFormatException e) {
 				System.out.println(INSERT_NUMBER);
 				abort = true;
 			}
@@ -226,13 +260,29 @@ public class Main {
 				}while(!valid);
 			}
 			//modifica effetiva
-			if(!abort && session.modifyProposal(id, field.getName(), obj))
+			if(!abort && session.modifyProposal(id, field.getName(), obj)) {
 				System.out.println("Modifica avvenuta con successo");
-			else
+				return true;
+			}
+			else {
 				System.out.println("Modifica fallita");
+				return false;
+			}
 		}),
-		NEW_EVENT("crea", "Crea un nuovo evento", ()->{
-			Category event = CategoryCache.getInstance().getCategory(CategoryHeading.FOOTBALLMATCH.getName());
+		NEW_EVENT("crea", "Crea un nuovo evento\tSintassi: crea [categoryName]", (args)->{
+			if(args.length == 0) {
+				System.out.println("Specifica il nome di una categoria");
+				return false;
+			}
+			String categoryName = args[0];
+			if(!Stream.of(CategoryHeading.values()).anyMatch((ch)->ch.getName().equalsIgnoreCase(categoryName))) {
+				System.out.println("Categoria non esistente");
+				return false;
+			}
+			Category event = CategoryCache.getInstance()
+											.getCategory(Stream.of(CategoryHeading.values())
+																.filter((ch)->ch.getName().equalsIgnoreCase(categoryName))
+																.findFirst().get().getName());
 			Stream.of(FieldHeading.values())
 					.filter(( fd )->event.containsField(fd.getName()))
 					.forEachOrdered(( fd )->{				
@@ -243,76 +293,120 @@ public class Main {
 						else
 							System.out.println("\tIl dato non è stato inserito correttamente\n");
 					});
-			if(session.addProposal(new Proposal(event, session.getOwner())))
+			if(session.addProposal(new Proposal(event, session.getOwner()))) {
 				System.out.println("La proposta è stata aggiunta alla proposte in lavorazione");
-			else
-				System.out.println("La proposta non è stata aggiunta");
-		}),
-		SHOW_WORKINPROGRESS("mostraInLavorazione", "Visualizza le tue proposte", ()->{
-			String proposals = session.showInProgress();
-			if(proposals.equals(""))
-				System.out.print("Nessuna proposta in lavorazione!\n");
+				return true;
+			}
 			else {
-				System.out.print("Le proposte in lavorazione:\n" + session.showInProgress());			
+				System.out.println("La proposta non è stata aggiunta");
+				return false;
+			}
+				
+		}),
+		SHOW_WORKINPROGRESS("mostraInLavorazione", "Visualizza le tue proposte", (args)->{
+			if(!checkNoParameter(args))
+				return false;
+			String proposals = session.showInProgress();
+			if(proposals.equals("")) {
+				System.out.print("Nessuna proposta in lavorazione!\n");
+				return false;
+			}		
+			else {
+				System.out.print("Le proposte in lavorazione:\n" + session.showInProgress());
+				return true;
 			}
 		}),
-		SHOW_NOTIFICATIONS("mostraNotifiche","Mostra le tue notifiche", ()->System.out.println(session.showNotification())),
-		REMOVE_NOTIFICATION("rimuoviNotifica","Rimuovi la notifica inserendo il loro identificativo",()->{
+		SHOW_NOTIFICATIONS("mostraNotifiche","Mostra le tue notifiche", (args)->{
+			if(!checkNoParameter(args))
+				return false;
+			if(session.noMessages())
+				System.out.println("Nessun messaggio.");
+			else
+				System.out.println(session.showNotification());
+			System.out.println(session.showNotification());
+			return true;
+		}),
+		REMOVE_NOTIFICATION("rimuoviNotifica","Rimuovi la notifica inserendo il loro identificativo\tSintassi: rimuoviNotifica [id]",(args)->{
+			if(!checkOneParameter(args))
+				return false;
 			boolean valid = false;
 			do {
 				try {
-					System.out.print("Inserisci l'id da eliminare: ");
-					int i = Integer.parseInt(in.nextLine());
+					int i = Integer.parseInt(args[0]);
 					valid = true;
-					if(!session.getOwner().removeMsg(i))
+					if(!session.getOwner().removeMsg(i)) {
 						System.out.println("La rimozione non è andata a buon fine");
-				}catch(Exception e) {
+						return false;
+					} else {
+						System.out.println("Notifica rimossa correttamente");
+						return true;
+					}
+				}catch(NumberFormatException e) {
 					System.out.println("Dato invalido, inserisci un numero");
+					return false;
 				}
 			}while(!valid);
 		}),
-		SHOW_NOTICEBOARD("mostraBacheca","Mostra tutte le proposte in bacheca",()->{
+		SHOW_NOTICEBOARD("mostraBacheca","Mostra tutte le proposte in bacheca",(args)->{
+			if(!checkNoParameter(args))
+				return false;
 			noticeBoard.refresh(); //refresh forzato quando viene richiesta la bacheca, sicuramente vedrà la bacheca aggiornata
 			String content = noticeBoard.showContent();
-			if(content.equals(""))
+			if(content.equals("")) {
 				System.out.print("Nessuna proposta in bacheca!\n");
-			else {
-				System.out.print("Le proposte in bacheca:\n" + noticeBoard.showContent());		
+				return false;
+			} else {
+				System.out.print("Le proposte in bacheca:\n" + noticeBoard.showContent());	
+				return true;		
 			}
 		
 		}),
-		PUBLISH("pubblica", "Pubblica un evento creato", ()->{
+		PUBLISH("pubblica", "Pubblica un evento creato\tSintassi: pubblica [id]", (args)->{
+			if(!checkOneParameter(args))
+				return false;
 			boolean valid = false;
 			do {
 				try {
-					System.out.print(INSERT_IDENTIFIER);
-					int id = Integer.parseInt(in.nextLine());
+					int id = Integer.parseInt(args[0]);
 					valid = true;
 					if(session.contains(id)) {
-						if(noticeBoard.add(session.getProposal(id)))
+						if(noticeBoard.add(session.getProposal(id))) {
 							System.out.println("Proposta aggiunta con successo");
-						else
+							session.removeProposal(id);
+							return true;
+						}
+						else {
 							System.out.println("La proposta inserita non è valida");
-					}else
+							return false;
+						}						
+					}else {
 						System.out.println("La proposta inserita non esiste");
-				}catch(Exception e) {
+						return false;
+					}
+				}catch(NumberFormatException e) {
 					System.out.println(INSERT_NUMBER);
+					return false;
 				}
 			}while(!valid);
 		}),
-		PARTICIPATE("partecipa","Partecipa ad una proposta in bacheca",()->{
+		PARTICIPATE("partecipa","Partecipa ad una proposta in bacheca\tSintassi: partecipa [id]",(args)->{
+			if(!checkOneParameter(args))
+				return false;
 			boolean valid = false;
 			do {
 				try {
-				System.out.print(INSERT_IDENTIFIER);
-				int id = Integer.parseInt(in.nextLine());
-				valid = true;
-				if(!noticeBoard.signUp(id, session.getOwner()))
-					System.out.println("L'iscrizione non è andata a buon fine");
-				else
-					System.out.println("L'iscrizione è andata a buon fine");
-				}catch(Exception e) {
+					int id = Integer.parseInt(args[0]);
+					valid = true;
+					if(!noticeBoard.signUp(id, session.getOwner())) {
+						System.out.println("L'iscrizione non è andata a buon fine");
+						return false;
+					} else {
+						System.out.println("L'iscrizione è andata a buon fine");
+						return true;
+					}
+				}catch(NumberFormatException e) {
 					System.out.println(INSERT_NUMBER);
+					return false;
 				}
 			}while(!valid);
 		});
@@ -328,7 +422,7 @@ public class Main {
 		/**
 		 * L'azione che il comando deve compiere
 		 */
-		private Runnable runnable;
+		private Shell runnable;
 		
 		/**
 		 * Costruttore
@@ -336,7 +430,7 @@ public class Main {
 		 * @param description la descrizione del comando
 		 * @param runnable ciò che il comando deve fare
 		 */
-		private Command(String comand, String description, Runnable runnable) {
+		private Command(String comand, String description, Shell runnable) {
 			this.name = comand;
 			this.description = description;
 			this.runnable = runnable;
@@ -361,8 +455,8 @@ public class Main {
 		/**
 		 * Esegue il comando
 		 */
-		public void run() {
-			runnable.run();
+		public void run(String args[]) {
+			runnable.run(args);
 		}
 		
 		/**
@@ -372,6 +466,36 @@ public class Main {
 		 */
 		public boolean hasName(String comando) {
 			return this.name.equals(comando);
+		}
+		
+
+		/**
+		 * Controlla se nella chiamata di un comando è stato passato un parametro
+		 * @param args Parametri di un comando
+		 * @return True - Se il parametro è uno <br> False - altrimenti
+		 */
+		private static boolean checkOneParameter(String args[]) {
+			if(args.length == 0) {
+				System.out.println("Inserisci un parametro");
+				return false;
+			} else if(args.length > 1) {
+				System.out.println("Inserisci un solo parametro");
+				return false;
+			}
+			return true;
+		}
+		
+		/**
+		 * Controlla se nella chiamata di un comando non è stato passato nessun parametro
+		 * @param args Parametri di un comando
+		 * @return True - Se nessun parametro passato <br> False - altrimenti
+		 */
+		private static boolean checkNoParameter(String args[]) {
+			if(args.length != 0) {
+				System.out.println("Sono stati inseriti parametri superflui");
+				return false;
+			}
+			return true;
 		}
 	}	
 

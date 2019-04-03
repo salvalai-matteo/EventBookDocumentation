@@ -107,4 +107,11 @@ public class Session {
 	public boolean contains(int id) {
 		return id >= 0 && id < proposalsSet.size();
 	}
+	/**
+	 * Verifica la presenza o meno di messaggi nello spazio personale
+	 * @return True se nessun messaggio presente <br> False altrimenti
+	 */
+	public boolean noMessages() {
+		return owner.noMessages();
+	}	
 }
