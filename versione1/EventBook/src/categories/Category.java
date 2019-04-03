@@ -21,7 +21,7 @@ public abstract class Category {
 	public Category() {
 		commonSet = FieldSet.buildCommonSet();
 	}
-	/**Visualizza la struttura di quello che può contenere in forma testuale.
+	/**Visualizza la struttura di quello che puÃ² contenere in forma testuale.
 	 * Non visualizza un loro eventuale contenuto
 	 * @return La struttura in forma testuale
 	 */

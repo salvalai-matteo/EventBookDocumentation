@@ -8,7 +8,7 @@ import fields.FieldSet;
  */
 public class FootballMatch extends Category{
 	
-	private static final Heading HEADING = Heading.FOOTBALLMATCH;
+	private static final CategoryHeading HEADING = CategoryHeading.FOOTBALLMATCH;
 	
 	/**
 	 * Contiene i campi legati esclusivamente alla partita di calcio

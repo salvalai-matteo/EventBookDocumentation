@@ -4,7 +4,7 @@ package categories;
  * @author Matteo Salvalai [715827], Lorenzo Maestrini [715780], Jacopo Mora [715149]
  *
  */
-public enum Heading {	
+public enum CategoryHeading {	
 
 	FOOTBALLMATCH("Partita di Calcio", "Una partita di calcio tra vari generi e età");
 	
@@ -27,7 +27,7 @@ public enum Heading {
 	 * @param name Il nome da contenere
 	 * @param description La descrizione da contenere
 	 */
-	private Heading(String name, String description) {
+	private CategoryHeading(String name, String description) {
 		this.name = name;
 		this.description = description;
 	}

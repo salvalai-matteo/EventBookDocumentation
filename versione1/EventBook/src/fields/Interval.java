@@ -18,8 +18,8 @@ public class Interval {
 	
 	//COSTRUTTORE
 	/**Costruttore 
-	 * @param infExt Il dato numerico più piccolo si vuole assegnare
-	 * @param supExt Il dato numerico più grande si vuole assegnare
+	 * @param infExt Il dato numerico piÃ¹ piccolo si vuole assegnare
+	 * @param supExt Il dato numerico piÃ¹ grande si vuole assegnare
 	 */
 	//estremoSuperiore >= estremoInferiore
 	public Interval(int infExt, int supExt) {

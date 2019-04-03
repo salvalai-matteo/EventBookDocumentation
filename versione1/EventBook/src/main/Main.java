@@ -15,14 +15,14 @@ public class Main {
 	private static final String COMMANDS = "I comandi a tua disposizione:"
 														+ "\n\thelp\t\tComunica i comandi a disposizione"
 														+ "\n\tcategoria\tMostra la categoria disponibile"
-														+ "\n\tdesc\t\tMostra le caratteristiche della categoria disponibile"
+														+ "\n\tdescrizione\t\tMostra le caratteristiche della categoria disponibile"
 														+ "\n\texit\t\tEsce dal programma";
 	private static final String HELP = "help";
-	private static final String DESCRIPTION = "desc";
+	private static final String DESCRIPTION = "descrizione";
 	private static final String CATEGORY = "categoria";
 	private static final String EXIT = "exit";
 	
-	private static final String WELCOME = "Welcome to EventBook";
+	private static final String WELCOME = "Welcome to EventBook\n";
 	private static final String WAITING = "> ";
 	private static final String EXIT_MSG = "Bye Bye";
 	

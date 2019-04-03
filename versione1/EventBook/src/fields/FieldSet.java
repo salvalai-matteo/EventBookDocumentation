@@ -3,7 +3,7 @@ package fields;
 import java.time.*;
 import java.util.ArrayList;
 
-/**Definisce una struttura dati con il compito di gestire di più campi
+/**Definisce una struttura dati con il compito di gestire di piÃ¹ campi
  * @author Matteo Salvalai [715827], Lorenzo Maestrini[715780], Jacopo Mora [715149]
  *
  */
@@ -30,18 +30,18 @@ public class FieldSet extends ArrayList<Field<?>>{
 	 */
 	public static FieldSet buildCommonSet() {
 		FieldSet set = new FieldSet();
-		set.add(new Field <String>(ExpandedHeading.TITOLO));
-		set.add(new Field <Integer>(ExpandedHeading.NUMEROPARTECIPANTI));
-		set.add(new Field <LocalDate>(ExpandedHeading.TERMINEISCRIZIONE));
-		set.add(new Field <String>(ExpandedHeading.LUOGO));
-		set.add(new Field <LocalDate>(ExpandedHeading.DATA));
-		set.add(new Field <LocalTime>(ExpandedHeading.ORA));
-		set.add(new Field <Integer>(ExpandedHeading.DURATA));
-		set.add(new Field <Double>(ExpandedHeading.QUOTAINDIVIDUALE));
-		set.add(new Field <String>(ExpandedHeading.COMPRESONELLAQUOTA));
-		set.add(new Field <LocalDate>(ExpandedHeading.DATACONCLUSIVA));
-		set.add(new Field <LocalTime>(ExpandedHeading.ORACONCLUSIVA));
-		set.add(new Field <String>(ExpandedHeading.NOTE));
+		set.add(new Field <String>(FieldHeading.TITOLO));
+		set.add(new Field <Integer>(FieldHeading.NUMEROPARTECIPANTI));
+		set.add(new Field <LocalDate>(FieldHeading.TERMINEISCRIZIONE));
+		set.add(new Field <String>(FieldHeading.LUOGO));
+		set.add(new Field <LocalDate>(FieldHeading.DATA));
+		set.add(new Field <LocalTime>(FieldHeading.ORA));
+		set.add(new Field <Integer>(FieldHeading.DURATA));
+		set.add(new Field <Double>(FieldHeading.QUOTAINDIVIDUALE));
+		set.add(new Field <String>(FieldHeading.COMPRESONELLAQUOTA));
+		set.add(new Field <LocalDate>(FieldHeading.DATACONCLUSIVA));
+		set.add(new Field <LocalTime>(FieldHeading.ORACONCLUSIVA));
+		set.add(new Field <String>(FieldHeading.NOTE));
 		return set;
 	}
 	
@@ -54,8 +54,8 @@ public class FieldSet extends ArrayList<Field<?>>{
 		FieldSet contenitore = new FieldSet();
 		switch(category) {
 			case FOOTBALLMATCH:
-					contenitore.add(new Field <String>(ExpandedHeading.GENERE));
-					contenitore.add(new Field <Interval>(ExpandedHeading.FASCIADIETA));
+					contenitore.add(new Field <String>(FieldHeading.GENERE));
+					contenitore.add(new Field <Interval>(FieldHeading.FASCIADIETA));
 					break;
 			default:
 					break;
