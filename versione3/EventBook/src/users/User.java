@@ -73,4 +73,11 @@ public class User implements Serializable{
 	public String showNotifications() {
 		return this.privateSpace.toString();
 	}
+	/**
+	 * Verifica se lo spazio personale è vuoto (non ha messaggi)
+	 * @return True se nessun messaggio presente <br> False altrimenti
+	 */
+	public boolean noMessages() {
+		return privateSpace.noMessages();
+	}	
 }

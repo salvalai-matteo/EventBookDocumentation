@@ -107,8 +107,10 @@ class CommandList extends ArrayList<Command>{
 		String command = getCommand(input);
 		String parameters = input.replaceAll(command, "").trim();
 		String[] args = new String[0];
-		if(!parameters.equals(""))
-			args = parameters.split(" ");
+		if(!parameters.equals("")) {
+			args = new String[1];
+			args[0] = parameters;
+		}
 		if(command.equals("help"))
 			System.out.println(toString());
 		else if(contains(command))

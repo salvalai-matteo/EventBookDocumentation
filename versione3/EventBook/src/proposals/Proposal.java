@@ -45,6 +45,7 @@ public class Proposal implements Serializable{
 		this.subscribers = new ArrayList<User>();
 		this.aState = State.INVALID;
 		//gestisce il caso in cui l'evento di riferimento sia già valido
+		statePassages = new ArrayList<State>();
 		update();
 		statePassages.add(aState);
 	}
@@ -53,16 +54,21 @@ public class Proposal implements Serializable{
 	 * Fa cambiare stato alla proposta
 	 */
 	public void update() {
-		aState.transition(this);
-		statePassages.add(aState);
+		State oldState = aState;
+		if(aState.transition(this))
+			if(!oldState.equals(aState))
+				statePassages.add(aState);
 	}
 	/**
 	 * Imposta un nuovo stato alla proposta
 	 * @param nS lo stato da assegnare alla proposta
 	 */
 	public void setState(State nS) {
-		aState = nS;
-		statePassages.add(aState);
+		State oldState = aState;
+		if(!oldState.equals(nS)) {
+			aState = nS;
+			statePassages.add(aState);
+		}
  	}
 	/**
 	 * Verifica se la proposta è uguale a quella inserita

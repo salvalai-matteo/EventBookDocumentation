@@ -323,7 +323,6 @@ public class Main {
 				System.out.println("Nessun messaggio.");
 			else
 				System.out.println(session.showNotification());
-			System.out.println(session.showNotification());
 			return true;
 		}),
 		REMOVE_NOTIFICATION("rimuoviNotifica","Rimuovi la notifica inserendo il loro identificativo\tSintassi: rimuoviNotifica [id]",(args)->{

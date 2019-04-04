@@ -135,7 +135,8 @@ public enum State implements Serializable{
 				if(tDate.compareTo(date) > 0) {
 					p.setState(ENDED);
 					return true;
-				}
+				} else 
+					return false;
 			}
 			LocalDate endDate = LocalDate.class.cast(tmp);
 			if(tDate.compareTo(endDate) > 0) {
