@@ -96,7 +96,7 @@ class CommandList extends ArrayList<Command>{
 	
 	/**
 	 * Esegue il comando di cui si è inserito il nome, se presente
-	 * @param command il nome del comando da eseguire
+	 * @param input il nome del comando da eseguire
 	 */
 	public void run(String input) {
 		String command = getCommand(input);

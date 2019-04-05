@@ -158,6 +158,8 @@ public class ProposalHandler implements Serializable{
 	
 	/**
 	 * Verifica che l'utente passato per parametro sia il proprietario della proposta identificata dall'id
+	 * @param id id della proposta
+	 * @param user l'utente
 	 * @return True se proprietario <br> False altrimenti
 	 */
 	public synchronized boolean isOwner(int id, User user) {

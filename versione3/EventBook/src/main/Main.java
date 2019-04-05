@@ -507,6 +507,7 @@ public class Main {
 	
 		/**
 		 * Esegue il comando
+		 * @param args Parametri del comando
 		 */
 		public void run(String[] args) {
 			runnable.run(args);

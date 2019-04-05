@@ -35,6 +35,7 @@ public class ProposalSet extends ArrayList<Proposal> implements Serializable{
 	}
 	/**
 	 * Consente di rimuovere tutte le proposte con stato diverso da quello atteso
+	 * @return lista di proposte tolte dalla bacheca
 	 */
 	protected ArrayList<Proposal> clean() {
 		ArrayList<Proposal> toClean = new ArrayList<Proposal>();
@@ -46,6 +47,7 @@ public class ProposalSet extends ArrayList<Proposal> implements Serializable{
 	}
 	/**
 	 * Effettua un refresh delle proposte nel set
+	 * @return lista di proposte aggiornate
 	 */
 	public ArrayList<Proposal> refresh() {
 		this.stream()

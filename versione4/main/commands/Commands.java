@@ -480,6 +480,7 @@ public enum Commands {
 		 * Costruttore
 		 * @param comand il nome del comando
 		 * @param description la descrizione del comando
+		 * @param syntax Sintassi del comando
 		 * @param runnable ciò che il comando deve fare
 		 */
 		private Commands(String comand, String description, String syntax, Shell runnable) {
@@ -525,6 +526,7 @@ public enum Commands {
 		
 		/**
 		 * Richiede all'utente di inserire un valore e ne verifica la validità in base al campo
+		 * @param ctx Contesto
 		 * @param field campo su cui verificare la validità del dato
 		 * @param message richiesta all'utente di inserire il dato
 		 * @return Oggetto correttamente elaborato in base al campo
