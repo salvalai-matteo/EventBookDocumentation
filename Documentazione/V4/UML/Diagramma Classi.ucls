@@ -3,7 +3,7 @@
   realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
   <class id="1" language="java" name="categories.CategoryCache" project="OldEventBook" 
     file="/OldEventBook/src/categories/CategoryCache.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="168" x="1060" y="2550"/>    
+    <position height="153" width="168" x="321" y="2532"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,7 +12,7 @@
   </class>  
   <class id="2" language="java" name="categories.FootballMatch" project="OldEventBook" 
     file="/OldEventBook/src/categories/FootballMatch.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="155" x="697" y="3530"/>    
+    <position height="99" width="155" x="142" y="3476"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="categories.Category" project="OldEventBook" 
     file="/OldEventBook/src/categories/Category.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="333" width="179" x="873" y="3031"/>    
+    <position height="333" width="179" x="256" y="3013"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,7 +30,7 @@
   </class>  
   <enumeration id="4" language="java" name="categories.CategoryHeading" project="OldEventBook" 
     file="/OldEventBook/src/categories/CategoryHeading.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="207" width="338" x="873" y="4096"/>    
+    <position height="207" width="338" x="430" y="4042"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -39,7 +39,7 @@
   </enumeration>  
   <class id="5" language="java" name="dataTypes.Pair" project="OldEventBook" 
     file="/OldEventBook/src/dataTypes/Pair.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="225" width="155" x="1278" y="3031"/>    
+    <position height="225" width="155" x="539" y="3013"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -48,7 +48,7 @@
   </class>  
   <class id="6" language="java" name="dataTypes.CategoriesInterest" project="OldEventBook" 
     file="/OldEventBook/src/dataTypes/CategoriesInterest.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="155" x="913" y="3813"/>    
+    <position height="135" width="155" x="470" y="3759"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,7 +57,7 @@
   </class>  
   <class id="7" language="java" name="dataTypes.Interval" project="OldEventBook" 
     file="/OldEventBook/src/dataTypes/Interval.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="155" x="766" y="37"/>    
+    <position height="243" width="155" x="42" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -66,7 +66,7 @@
   </class>  
   <class id="8" language="java" name="dataTypes.Gender" project="OldEventBook" 
     file="/OldEventBook/src/dataTypes/Gender.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="155" x="306" y="37"/>    
+    <position height="135" width="155" x="237" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -75,7 +75,7 @@
   </class>  
   <enumeration id="9" language="java" name="dataTypes.ClassType" project="OldEventBook" 
     file="/OldEventBook/src/dataTypes/ClassType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="369" width="244" x="555" y="5467"/>    
+    <position height="351" width="244" x="112" y="5413"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -84,7 +84,7 @@
   </enumeration>  
   <enumeration id="10" language="java" name="fields.FieldHeading" project="OldEventBook" 
     file="/OldEventBook/src/fields/FieldHeading.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="621" width="338" x="833" y="4806"/>    
+    <position height="621" width="338" x="390" y="4752"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -93,7 +93,7 @@
   </enumeration>  
   <class id="11" language="java" name="fields.FieldSetFactory" project="OldEventBook" 
     file="/OldEventBook/src/fields/FieldSetFactory.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="153" width="236" x="585" y="3813"/>    
+    <position height="153" width="236" x="142" y="3759"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -102,7 +102,7 @@
   </class>  
   <class id="12" language="java" name="fields.FieldSet" project="OldEventBook" 
     file="/OldEventBook/src/fields/FieldSet.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="297" width="285" x="506" y="4096"/>    
+    <position height="297" width="285" x="63" y="4042"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -111,7 +111,7 @@
   </class>  
   <class id="13" language="java" name="fields.Field" project="OldEventBook" file="/OldEventBook/src/fields/Field.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="333" width="257" x="555" y="4433"/>    
+    <position height="333" width="257" x="112" y="4379"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -120,7 +120,7 @@
   </class>  
   <class id="14" language="java" name="main.commands.SimpleStreamAdapter" project="OldEventBook" 
     file="/OldEventBook/src/main/commands/SimpleStreamAdapter.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="171" width="150" x="1132" y="320"/>    
+    <position height="135" width="150" x="215" y="320"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -129,7 +129,7 @@
   </class>  
   <class id="15" language="java" name="main.commands.Context" project="OldEventBook" 
     file="/OldEventBook/src/main/commands/Context.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="333" width="261" x="1532" y="1485"/>    
+    <position height="315" width="261" x="752" y="1485"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -138,7 +138,7 @@
   </class>  
   <interface id="16" language="java" name="main.commands.InOutStream" project="OldEventBook" 
     file="/OldEventBook/src/main/commands/InOutStream.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="135" width="118" x="1132" y="1858"/>    
+    <position height="117" width="118" x="215" y="1840"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -147,7 +147,7 @@
   </interface>  
   <enumeration id="17" language="java" name="main.commands.Commands" project="OldEventBook" 
     file="/OldEventBook/src/main/commands/Commands.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="657" width="260" x="1251" y="667"/>    
+    <position height="657" width="260" x="432" y="667"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -156,7 +156,7 @@
   </enumeration>  
   <interface id="18" language="java" name="main.commands.Shell" project="OldEventBook" 
     file="/OldEventBook/src/main/commands/Shell.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="81" width="165" x="1346" y="1364"/>    
+    <position height="81" width="165" x="527" y="1364"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -165,7 +165,7 @@
   </interface>  
   <class id="19" language="java" name="main.commands.CommandsHandler" project="OldEventBook" 
     file="/OldEventBook/src/main/commands/CommandsHandler.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="297" width="289" x="1322" y="320"/>    
+    <position height="297" width="289" x="432" y="320"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -174,7 +174,7 @@
   </class>  
   <class id="20" language="java" name="main.console.Main" project="OldEventBook" 
     file="/OldEventBook/src/main/console/Main.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="99" width="113" x="1227" y="37"/>    
+    <position height="99" width="113" x="432" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -183,7 +183,7 @@
   </class>  
   <class id="21" language="java" name="proposals.ProposalSet" project="OldEventBook" 
     file="/OldEventBook/src/proposals/ProposalSet.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="261" width="267" x="1202" y="2249"/>    
+    <position height="261" width="267" x="463" y="2231"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -192,7 +192,7 @@
   </class>  
   <enumeration id="22" language="java" name="proposals.State" project="OldEventBook" 
     file="/OldEventBook/src/proposals/State.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="459" width="792" x="41" y="3031"/>    
+    <position height="423" width="169" x="47" y="3013"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -201,7 +201,7 @@
   </enumeration>  
   <class id="23" language="java" name="proposals.Proposal" project="OldEventBook" 
     file="/OldEventBook/src/proposals/Proposal.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="441" width="191" x="1278" y="2550"/>    
+    <position height="441" width="191" x="539" y="2532"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -210,7 +210,7 @@
   </class>  
   <class id="24" language="java" name="proposals.ProposalHandler" project="OldEventBook" 
     file="/OldEventBook/src/proposals/ProposalHandler.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="351" width="217" x="1290" y="1858"/>    
+    <position height="351" width="217" x="574" y="1840"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -219,7 +219,7 @@
   </class>  
   <class id="25" language="java" name="users.User" project="OldEventBook" file="/OldEventBook/src/users/User.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="387" width="220" x="1511" y="3031"/>    
+    <position height="387" width="220" x="956" y="3013"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -228,7 +228,7 @@
   </class>  
   <class id="26" language="java" name="users.Message" project="OldEventBook" file="/OldEventBook/src/users/Message.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="250" x="1627" y="3813"/>    
+    <position height="243" width="250" x="1301" y="3759"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -237,7 +237,7 @@
   </class>  
   <class id="27" language="java" name="users.Database" project="OldEventBook" 
     file="/OldEventBook/src/users/Database.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="189" width="192" x="1572" y="2550"/>    
+    <position height="189" width="192" x="1392" y="2532"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -246,7 +246,7 @@
   </class>  
   <class id="28" language="java" name="users.PersonalSpace" project="OldEventBook" 
     file="/OldEventBook/src/users/PersonalSpace.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="303" x="1532" y="3530"/>    
+    <position height="243" width="303" x="977" y="3476"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -255,340 +255,368 @@
   </class>  
   <class id="29" language="java" name="users.Profile" project="OldEventBook" file="/OldEventBook/src/users/Profile.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="243" width="537" x="913" y="3530"/>    
+    <position height="243" width="537" x="358" y="3476"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <dependency id="30">    
-    <bendpoint x="475" y="3530"/>    
-    <bendpoint x="475" y="3813"/>    
-    <bendpoint x="475" y="4096"/>    
-    <bendpoint x="475" y="4433"/>    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <association id="31">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="32" name="event"/>      
-      <multiplicity id="33" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
+  <class id="30" language="java" name="utility.FileHandler" project="OldEventBook" 
+    file="/OldEventBook/src/utility/FileHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="161" x="373" y="1840"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="utility.MessageHandler" project="OldEventBook" 
+    file="/OldEventBook/src/utility/MessageHandler.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="244" x="1098" y="2532"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="utility.Session" project="OldEventBook" 
+    file="/OldEventBook/src/utility/Session.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="225" x="812" y="2231"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="33" language="java" name="utility.Parser" project="OldEventBook" 
+    file="/OldEventBook/src/utility/Parser.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="103" x="112" y="5804"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
   <association id="34">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="35" name="subscribers"/>      
-      <multiplicity id="36" minimum="0" maximum="2147483647"/>    
+    <bendpoint x="893" y="2532"/>    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="35" name="owner"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="25" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="37">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="38" name="proposteRitirate"/>      
-      <multiplicity id="39" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="40">    
-    <bendpoint x="1501" y="3530"/>    
-    <bendpoint x="1501" y="3813"/>    
-    <bendpoint x="1501" y="4096"/>    
-    <bendpoint x="1501" y="4433"/>    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <dependency id="41">    
+  <dependency id="37">    
     <end type="SOURCE" refId="29"/>    
     <end type="TARGET" refId="11"/>  
   </dependency>  
-  <association id="42">    
-    <end type="SOURCE" refId="20" navigable="false">      
-      <attribute id="43" name="handler"/>      
-      <multiplicity id="44" minimum="0" maximum="1"/>    
+  <dependency id="38">    
+    <bendpoint x="90" y="3759"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <association id="39">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="40" name="proposteRitirate"/>      
+      <multiplicity id="41" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="19" navigable="true"/>    
+    <end type="TARGET" refId="21" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="45">    
-    <bendpoint x="1082" y="3031"/>    
+  <dependency id="42">    
+    <bendpoint x="465" y="3013"/>    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="2"/>  
   </dependency>  
-  <association id="46">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="47" name="noticeBoard"/>      
-      <multiplicity id="48" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="24" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="49">    
-    <bendpoint x="1499" y="2550"/>    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="25"/>  
+  <dependency id="43">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="15"/>  
   </dependency>  
-  <association id="50">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="51" name="profile"/>      
-      <multiplicity id="52" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="29" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="53">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="54" name="instance"/>      
-      <multiplicity id="55" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="56">    
-    <bendpoint x="821" y="4096"/>    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="13"/>  
-  </dependency>  
-  <realization id="57">    
-    <bendpoint x="1141" y="667"/>    
-    <bendpoint x="1141" y="1364"/>    
-    <bendpoint x="1141" y="1485"/>    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="16"/>  
-  </realization>  
-  <association id="58">    
-    <end type="SOURCE" refId="25" navigable="false">      
-      <attribute id="59" name="privateSpace"/>      
-      <multiplicity id="60" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="28" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="61">    
-    <bendpoint x="1220" y="667"/>    
-    <bendpoint x="1220" y="1364"/>    
-    <bendpoint x="1220" y="1485"/>    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="16"/>  
-  </dependency>  
-  <association id="62">    
-    <end type="SOURCE" refId="13" navigable="false">      
-      <attribute id="63" name="heading"/>      
-      <multiplicity id="64" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="65">    
-    <bendpoint x="1541" y="1858"/>    
-    <bendpoint x="1541" y="2249"/>    
-    <bendpoint x="1541" y="2550"/>    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="25"/>  
-  </dependency>  
-  <association id="66">    
-    <end type="SOURCE" refId="17" navigable="false">      
-      <attribute id="67" name="runnable"/>      
-      <multiplicity id="68" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="18" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="69">    
-    <bendpoint x="642" y="2249"/>    
-    <bendpoint x="642" y="2550"/>    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="22"/>  
-  </dependency>  
-  <association id="70">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="71" name="type"/>      
-      <multiplicity id="72" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="73">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="74" name="aState"/>      
-      <multiplicity id="75" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="76">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <dependency id="77">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <association id="78">    
-    <bendpoint x="882" y="3530"/>    
-    <bendpoint x="882" y="3813"/>    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="79" name="heading"/>      
-      <multiplicity id="80" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="4" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="81">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="82" name="owner"/>      
-      <multiplicity id="83" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="25" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="84">    
-    <bendpoint x="1499" y="2249"/>    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="23"/>  
-  </dependency>  
-  <dependency id="85">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="13"/>  
-  </dependency>  
-  <association id="86">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="87" name="proposteConcluse"/>      
-      <multiplicity id="88" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="89">    
-    <bendpoint x="1886" y="3031"/>    
-    <bendpoint x="1886" y="3530"/>    
-    <end type="SOURCE" refId="27"/>    
-    <end type="TARGET" refId="26"/>  
-  </dependency>  
-  <association id="90">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="91" name="set"/>      
-      <multiplicity id="92" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="93">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="94" name="proposteFallite"/>      
-      <multiplicity id="95" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="21" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="96">    
-    <bendpoint x="1520" y="2249"/>    
-    <bendpoint x="1520" y="2550"/>    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="25"/>  
-  </dependency>  
-  <association id="97">    
-    <bendpoint x="1562" y="1858"/>    
-    <bendpoint x="1562" y="2249"/>    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="98" name="database"/>      
-      <multiplicity id="99" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="27" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="100">    
-    <bendpoint x="1541" y="667"/>    
-    <bendpoint x="1541" y="1364"/>    
+  <association id="44">    
+    <bendpoint x="722" y="667"/>    
+    <bendpoint x="722" y="1364"/>    
     <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="101" name="context"/>      
-      <multiplicity id="102" minimum="0" maximum="1"/>    
+      <attribute id="45" name="context"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="15" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="103">    
-    <end type="SOURCE" refId="27" navigable="false">      
-      <attribute id="104" name="users"/>      
-      <multiplicity id="105" minimum="0" maximum="2147483647"/>    
+  <dependency id="47">    
+    <bendpoint x="1310" y="3476"/>    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <association id="48">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="49" name="heading"/>      
+      <multiplicity id="50" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="25" navigable="true"/>    
+    <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="106">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <association id="107">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="108" name="statePassages"/>      
-      <multiplicity id="109" minimum="0" maximum="2147483647"/>    
+  <association id="51">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="52" name="profile"/>      
+      <multiplicity id="53" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="29" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="110">    
-    <end type="SOURCE" refId="1" navigable="false">      
-      <attribute id="111" name="instance"/>      
-      <multiplicity id="112" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="1" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="113">    
+  <dependency id="54">    
+    <bendpoint x="378" y="4042"/>    
     <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="12"/>  
+    <end type="TARGET" refId="13"/>  
   </dependency>  
-  <association id="114">    
-    <bendpoint x="663" y="2550"/>    
-    <end type="SOURCE" refId="21" navigable="false">      
-      <attribute id="115" name="state"/>      
-      <multiplicity id="116" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="22" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="117">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="11"/>  
+  <dependency id="55">    
+    <bendpoint x="798" y="3759"/>    
+    <bendpoint x="798" y="4042"/>    
+    <bendpoint x="798" y="4379"/>    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="10"/>  
   </dependency>  
-  <dependency id="118">    
-    <end type="SOURCE" refId="18"/>    
-    <end type="TARGET" refId="15"/>  
-  </dependency>  
-  <association id="119">    
+  <association id="56">    
     <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="120" name="proposteChiuse"/>      
-      <multiplicity id="121" minimum="0" maximum="1"/>    
+      <attribute id="57" name="proposteConcluse"/>      
+      <multiplicity id="58" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="21" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="122">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="23"/>  
+  <dependency id="59">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="11"/>  
   </dependency>  
-  <dependency id="123">    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <dependency id="124">    
+  <dependency id="60">    
     <end type="SOURCE" refId="20"/>    
     <end type="TARGET" refId="14"/>  
   </dependency>  
-  <association id="125">    
-    <bendpoint x="554" y="3813"/>    
+  <dependency id="61">    
+    <bendpoint x="32" y="3476"/>    
+    <bendpoint x="32" y="3759"/>    
+    <bendpoint x="32" y="4042"/>    
+    <bendpoint x="32" y="4379"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="62">    
+    <bendpoint x="1356" y="3013"/>    
+    <bendpoint x="1356" y="3476"/>    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="63">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="64">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="65" name="subscribers"/>      
+      <multiplicity id="66" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="67">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="68" name="messageList"/>      
+      <multiplicity id="69" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="70">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="71" name="noticeBoard"/>      
+      <multiplicity id="72" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="73">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <association id="74">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="75" name="owner"/>      
+      <multiplicity id="76" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="77">    
+    <bendpoint x="333" y="667"/>    
+    <bendpoint x="333" y="1364"/>    
+    <bendpoint x="333" y="1485"/>    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <association id="78">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="79" name="aState"/>      
+      <multiplicity id="80" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="81">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="82" name="instance"/>      
+      <multiplicity id="83" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="84">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="85" name="parser"/>      
+      <multiplicity id="86" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="87">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="88" name="runnable"/>      
+      <multiplicity id="89" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="90">    
+    <bendpoint x="111" y="3759"/>    
     <end type="SOURCE" refId="29" navigable="false">      
-      <attribute id="126" name="fields"/>      
-      <multiplicity id="127" minimum="0" maximum="1"/>    
+      <attribute id="91" name="fields"/>      
+      <multiplicity id="92" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="12" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <dependency id="93">    
+    <bendpoint x="269" y="2231"/>    
+    <bendpoint x="269" y="2532"/>    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="22"/>  
+  </dependency>  
+  <dependency id="94">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <association id="95">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="96" name="event"/>      
+      <multiplicity id="97" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="98">    
+    <bendpoint x="1331" y="3013"/>    
+    <bendpoint x="1331" y="3476"/>    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="99">    
+    <bendpoint x="399" y="4042"/>    
+    <bendpoint x="399" y="4379"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <dependency id="100">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <association id="101">    
+    <end type="SOURCE" refId="32" navigable="false">      
+      <attribute id="102" name="proposalsSet"/>      
+      <multiplicity id="103" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="104">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="105" name="privateSpace"/>      
+      <multiplicity id="106" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="107">    
+    <bendpoint x="121" y="4752"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="9"/>  
+  </dependency>  
+  <dependency id="108">    
+    <bendpoint x="418" y="3759"/>    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <association id="109">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="110" name="proposteChiuse"/>      
+      <multiplicity id="111" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="112">    
+    <bendpoint x="946" y="3476"/>    
+    <bendpoint x="946" y="3759"/>    
+    <bendpoint x="946" y="4042"/>    
+    <bendpoint x="946" y="4379"/>    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="10"/>  
+  </dependency>  
+  <association id="113">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="114" name="instance"/>      
+      <multiplicity id="115" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="31" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="116">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="117" name="inOut"/>      
+      <multiplicity id="118" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="119">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <association id="120">    
+    <bendpoint x="821" y="1840"/>    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="121" name="session"/>      
+      <multiplicity id="122" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="123">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="124" name="handler"/>      
+      <multiplicity id="125" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="126">    
+    <bendpoint x="925" y="3013"/>    
+    <bendpoint x="925" y="3476"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="26"/>  
+  </dependency>  
+  <dependency id="127">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
   <association id="128">    
     <end type="SOURCE" refId="19" navigable="false">      
       <attribute id="129" name="instance"/>      
@@ -598,86 +626,150 @@
     <display labels="true" multiplicity="true"/>  
   </association>  
   <association id="131">    
-    <end type="SOURCE" refId="28" navigable="false">      
-      <attribute id="132" name="messageList"/>      
-      <multiplicity id="133" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="134">    
-    <bendpoint x="842" y="4096"/>    
-    <bendpoint x="842" y="4433"/>    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <dependency id="135">    
-    <bendpoint x="861" y="3813"/>    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="4"/>  
-  </dependency>  
-  <dependency id="136">    
-    <bendpoint x="1241" y="3813"/>    
-    <bendpoint x="1241" y="4096"/>    
-    <bendpoint x="1241" y="4433"/>    
-    <end type="SOURCE" refId="29"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <association id="137">    
-    <end type="SOURCE" refId="15" navigable="false">      
-      <attribute id="138" name="inOut"/>      
-      <multiplicity id="139" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="140">    
-    <end type="SOURCE" refId="19" navigable="false">      
-      <attribute id="141" name="cList"/>      
-      <multiplicity id="142" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="17" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="143">    
-    <bendpoint x="1480" y="3031"/>    
-    <bendpoint x="1480" y="3530"/>    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="26"/>  
-  </dependency>  
-  <dependency id="144">    
-    <bendpoint x="533" y="3813"/>    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="12"/>  
-  </dependency>  
-  <dependency id="145">    
-    <bendpoint x="1865" y="3530"/>    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="26"/>  
-  </dependency>  
-  <association id="146">    
-    <bendpoint x="512" y="3530"/>    
-    <bendpoint x="512" y="3813"/>    
-    <end type="SOURCE" refId="3" navigable="false">      
-      <attribute id="147" name="fields"/>      
-      <multiplicity id="148" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="149">    
     <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="150" name="bacheca"/>      
-      <multiplicity id="151" minimum="0" maximum="1"/>    
+      <attribute id="132" name="proposteFallite"/>      
+      <multiplicity id="133" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="21" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <dependency id="152">    
-    <bendpoint x="564" y="4806"/>    
-    <end type="SOURCE" refId="13"/>    
-    <end type="TARGET" refId="9"/>  
+  <dependency id="134">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="25"/>  
   </dependency>  
+  <dependency id="135">    
+    <bendpoint x="1067" y="1840"/>    
+    <bendpoint x="1067" y="2231"/>    
+    <bendpoint x="1067" y="2532"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <association id="136">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="137" name="statePassages"/>      
+      <multiplicity id="138" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="139">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="140" name="set"/>      
+      <multiplicity id="141" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="142">    
+    <bendpoint x="327" y="3476"/>    
+    <bendpoint x="439" y="3759"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="143" name="heading"/>      
+      <multiplicity id="144" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="145">    
+    <bendpoint x="290" y="2532"/>    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="146" name="state"/>      
+      <multiplicity id="147" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="148">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="149" name="cList"/>      
+      <multiplicity id="150" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="151">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="152" name="bacheca"/>      
+      <multiplicity id="153" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="154">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="155" name="type"/>      
+      <multiplicity id="156" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="157">    
+    <bendpoint x="1088" y="1840"/>    
+    <bendpoint x="1088" y="2231"/>    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="158" name="database"/>      
+      <multiplicity id="159" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="160">    
+    <bendpoint x="69" y="3476"/>    
+    <bendpoint x="69" y="3759"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="161" name="fields"/>      
+      <multiplicity id="162" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <dependency id="163">    
+    <bendpoint x="760" y="2532"/>    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <dependency id="164">    
+    <bendpoint x="781" y="2231"/>    
+    <bendpoint x="781" y="2532"/>    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="25"/>  
+  </dependency>  
+  <generalization id="165">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <association id="166">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="167" name="instance"/>      
+      <multiplicity id="168" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="169">    
+    <bendpoint x="224" y="667"/>    
+    <bendpoint x="224" y="1364"/>    
+    <bendpoint x="224" y="1485"/>    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <dependency id="170">    
+    <bendpoint x="760" y="2231"/>    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="23"/>  
+  </dependency>  
+  <dependency id="171">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="30"/>  
+  </dependency>  
+  <association id="172">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="173" name="users"/>      
+      <multiplicity id="174" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

@@ -1,9 +1,6 @@
 package main.commands;
 
-import java.io.Closeable;
-import java.io.IOException;
-
-public interface InOutStream extends Closeable{
+public interface InOutStream{
 
 	/**
 	 * Legge una stringa dallo stream in ingresso
@@ -24,8 +21,4 @@ public interface InOutStream extends Closeable{
 	 */
 	public void writeln(String str);
 
-	/* (non-Javadoc)
-	 * @see java.io.Closeable#close()
-	 */
-	public void close() throws IOException;
 }

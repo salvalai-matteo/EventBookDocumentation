@@ -430,17 +430,20 @@ public enum Commands {
 					return true;
 				}else if(confirm.equalsIgnoreCase("n")) {							
 					ArrayList<User> receivers = new ArrayList<>();
+					receivers.addAll(userList);
 					userList.stream()
-								.forEach(( u )->{
-									String answer = ctx.getIOStream().read("Invitare " + u.getName() + " ? [y|n]> ");
-									if(answer.equalsIgnoreCase("y")) {
-										receivers.add(u);
-										ctx.getIOStream().writeln("L'utente verrà notificato");
-									}else if(answer.equalsIgnoreCase("n"))
-										ctx.getIOStream().writeln(u.getName() + " non verrà invitato ");
-									else
-										ctx.getIOStream().writeln("Inserito valore non valido. L'utente non verrà notificato");
-								});
+						.forEach(( u )->{
+								String answer = ctx.getIOStream().read("Vuole invitare " + u.getName() + " ? [y|n]> ");
+								if(answer.equalsIgnoreCase("y")) 
+									ctx.getIOStream().writeln("L'utente verrà invitato");
+								else if(answer.equalsIgnoreCase("n")) {
+									ctx.getIOStream().writeln("L'utente non verrà invitato ");
+									receivers.remove(u);
+								}else {
+									ctx.getIOStream().writeln("Il valore non è valido. L'utente non verrà invitato");
+									receivers.remove(u);
+								}
+						});
 					MessageHandler.getInstance().inviteUsers(userList, owner.getName(), id);
 					return true;
 				}else {

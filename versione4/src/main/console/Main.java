@@ -24,7 +24,6 @@ public class Main {
 			try {
 				handler.close();
 				ssa.writeln("Bye Bye");
-				ssa.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
