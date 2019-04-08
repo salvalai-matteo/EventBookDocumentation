@@ -113,6 +113,14 @@ public class Proposal implements Serializable{
 	}
 	
 	/**
+	 * Restituisce il proprietario della proposta
+	 * @return proprietario della proposta
+	 */
+	public User getOwner() {
+		return owner;
+	}
+	
+	/**
 	 * Disiscrive un fruitore alla proposta 
 	 * @param user il fruitore da iscrivere
 	 * @return True - l'utente è stato correttamente disiscritto dalla proposta<br>False - l'utente non è stato disiscritto dalla proposta

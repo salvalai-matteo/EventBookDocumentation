@@ -7,6 +7,7 @@ import java.util.TimerTask;
 
 import proposals.ProposalHandler;
 import users.Database;
+import users.User;
 import utility.FileHandler;
 import utility.Session;
 
@@ -65,11 +66,15 @@ public class Context implements Closeable{
 		
 		noticeBoard.getAll()
 			.stream()
-				.forEach((p)->p.getSubscribers()
-						.forEach((u)-> { 
-							u.setPrivateSpace(database.getUser(u.getName()).getPrivateSpace());
-							u.setProfile(database.getUser(u.getName()).getProfile());
-						}));
+				.forEach((p)->{	p.getSubscribers()
+									.forEach((u)-> { 
+										u.setPrivateSpace(database.getUser(u.getName()).getPrivateSpace());
+										u.setProfile(database.getUser(u.getName()).getProfile());
+									});
+								User owner = p.getOwner();
+								owner.setPrivateSpace(database.getUser(owner.getName()).getPrivateSpace());
+								owner.setProfile(database.getUser(owner.getName()).getProfile());
+								});
 		
 		inOut.writeln("Fine caricamento");
 		inOut.writeln("Pronto");
