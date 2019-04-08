@@ -1,5 +1,10 @@
 package main.commands;
 
+/**
+ * Interfaccia con il compito di definire la metodologia con la quale il sistema si approccia con l'esterno
+ * @author Matteo Salvalai [715827], Lorenzo Maestrini[715780], Jacopo Mora [715149]
+ *
+ */
 public interface InOutStream{
 
 	/**

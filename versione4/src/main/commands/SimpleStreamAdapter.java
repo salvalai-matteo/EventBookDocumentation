@@ -3,8 +3,8 @@ package main.commands;
 import main.commands.InOutStream;
 
 /**
- * Classe che implemeneta l'interfaccia InOut con lo scopo di fare da ponte fra la console e gli utilizzatori dell'interfaccia
- * @author Matteo
+ * Classe che implementa l'interfaccia InOut utilizzando i più semplici input e output stream
+ * @author Matteo Salvalai [715827], Lorenzo Maestrini[715780], Jacopo Mora [715149]
  *
  */
 public class SimpleStreamAdapter implements InOutStream{
