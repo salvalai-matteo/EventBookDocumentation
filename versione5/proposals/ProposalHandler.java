@@ -49,7 +49,7 @@ public class ProposalHandler implements Serializable{
 	/* (non-Javadoc)
 	 * @see java.util.ArrayList#add(java.lang.Object)
 	 */
-	public synchronized boolean add(Proposal p) {
+	public boolean add(Proposal p) {
 		if(!bacheca.contains(p)) {
 			p.publish();
 			if(p.hasState(bacheca.getState())) {
@@ -64,7 +64,7 @@ public class ProposalHandler implements Serializable{
 	 * @param user l'utente che vuole rimuovere la proposta
 	 * @return True - la proposta è stata ritirata<br>False - la proposta non è stata ritirata
 	 */
-	public synchronized boolean withdraw(int id, User user) {
+	public boolean withdraw(int id, User user) {
 		boolean outcome = false;
 		if(contains(id)) {
 			if(bacheca.get(id).isOwner(user)) {
@@ -81,7 +81,7 @@ public class ProposalHandler implements Serializable{
 	 * @param preferenze preferenze impostate dall'utente
 	 * @return l'esito dell'iscrizione
 	 */
-	public synchronized boolean signUp(int id, User user, OptionsSet preferenze) {
+	public boolean signUp(int id, User user, OptionsSet preferenze) {
 		if(bacheca.contains(id)) 
 			if(bacheca.get(id).signUp(user, preferenze)) {
 				this.refresh();
@@ -95,7 +95,7 @@ public class ProposalHandler implements Serializable{
 	 * @param user l'utente da disiscrivere alla proposta 
 	 * @return l'esito della disiscrizione
 	 */
-	public synchronized boolean unsubscribe(int id, User user) {
+	public boolean unsubscribe(int id, User user) {
 		if(bacheca.contains(id))
 			return bacheca.get(id).unsubscribe(user);
 		return false;
@@ -106,18 +106,30 @@ public class ProposalHandler implements Serializable{
 	 * @param user utente
 	 * @return True se iscritto - False se non iscritto
 	 */
-	public synchronized boolean isSignedUp(int id, User user) {
+	public boolean isSignedUp(int id, User user) {
 		if(bacheca.contains(id))
 			return bacheca.isSignedUp(id,user);
 		return false;
 
 	}
+	
+	/**
+	 * Controlla se la proposta di cui si è inseriti l'identificatore è al completo 
+	 * @param id l'identificatore
+	 * @return True - la proposta è al completo<br>False - la proposta non è al completo
+	 */
+	public boolean isFull(int id) {
+		if(bacheca.contains(id)) 
+			return bacheca.get(id).isFull();
+		return false;
+	}
+	
 	/**
 	 * Ritorna una stringa contenente tutte le proposte a cui è iscritto l'utente passato come parametro
 	 * @param user utente
 	 * @return stringa di proposte a cui l'utente è iscritto
 	 */
-	public synchronized String showUserSubscription(User user) {
+	public String showUserSubscription(User user) {
 		return bacheca.showUserSubscription(user);
 	}
 	/**
@@ -125,7 +137,7 @@ public class ProposalHandler implements Serializable{
 	 * @param user utente
 	 * @return numero di iscrizioni dell'utente
 	 */
-	public synchronized int countUserSubscription(User user) {
+	public int countUserSubscription(User user) {
 		return bacheca.countUserSubscription(user);
 	}
 	/**
@@ -133,7 +145,7 @@ public class ProposalHandler implements Serializable{
 	 * @param p il titolo della proposta
 	 * @return True - contiene almeno una proposta con quel titolo<br>False - non ci sono proposte con quel titolo
 	 */
-	public synchronized boolean contains(Proposal p) {
+	public boolean contains(Proposal p) {
 		return bacheca.contains(p);
 	}
 	/**
@@ -141,13 +153,13 @@ public class ProposalHandler implements Serializable{
 	 * @param id l'identificatore della proposta da controllare
 	 * @return True - il set contiene la proposta<br>False - il set non contiene la proposta
 	 */
-	public synchronized boolean contains(int id) {
+	public boolean contains(int id) {
 		return bacheca.contains(id);
 	}
 	/**
 	 * Effettua un update su tutto il set
 	 */
-	public synchronized void refresh() {
+	public void refresh() {
 		//ritirate fallite concluse non vanno da nessuna parte
 		//chiuse vanno in concluse
 		//aperte -> fallite/ritirate/chiuse
@@ -168,7 +180,7 @@ public class ProposalHandler implements Serializable{
 	 * Mostra il contenuto dell'insieme di proposte in forma testuale
 	 * @return il contenuto dell'insieme in forma testuale
 	 */
-	public synchronized String showContent() {
+	public String showContent() {
 		return bacheca.showContent();
 	}
 	
@@ -178,7 +190,7 @@ public class ProposalHandler implements Serializable{
 	 * @param user utente
 	 * @return True se proprietario <br> False altrimenti
 	 */
-	public synchronized boolean isOwner(int id, User user) {
+	public boolean isOwner(int id, User user) {
 		if(bacheca.contains(id))
 			return bacheca.get(id).isOwner(user);
 		return false;
@@ -186,12 +198,13 @@ public class ProposalHandler implements Serializable{
 	
 	/**
 	 * Restituisce una lista di utenti papabili per un invito in base a quelli che hanno partecipate a proposte
-	 * presentate dall'utente inserito
+	 * presentate dall'utente inserito.<br>
+	 * L'utente inserito non fa parte della lista restituita
 	 * @param owner utente proprietario di proposte
 	 * @param categoryName nome della Categoria
 	 * @return lista contente utenti da invitare
 	 */
-	public synchronized ArrayList<User> searchBy(User owner, String categoryName){
+	public ArrayList<User> searchBy(User owner, String categoryName){
 		ArrayList<User> userList = new ArrayList<User>();
 		Stream.concat(proposteConcluse.stream(), proposteChiuse.stream())
 			.filter((p)->p.isOwner(owner))
@@ -199,7 +212,7 @@ public class ProposalHandler implements Serializable{
 			.map((p) -> p.getUsers())
 			.forEach((l) -> l.stream()
 								.forEach((u) -> {
-									if(!userList.contains(u))
+									if(!userList.contains(u) && !u.equals(owner))
 										userList.add(u);
 				}));
 		return userList;
@@ -210,7 +223,7 @@ public class ProposalHandler implements Serializable{
 	 * @param id id della proposta
 	 * @return Nome della categoria
 	 */
-	public synchronized String getCategory(int id) {
+	public String getCategory(int id) {
 		if(bacheca.contains(id))
 			return bacheca.get(id).getCategoryName();
 		return null;
@@ -220,7 +233,7 @@ public class ProposalHandler implements Serializable{
 	 * @param id l'identificativo della proposta interessata
 	 * @return l'insieme di scelte che è possibile fare sulla proposta, null se la proposta non esiste
 	 */
-	public synchronized OptionsSet getPreferenze(int id) {
+	public OptionsSet getPreferenze(int id) {
 		if(bacheca.contains(id))
 			return bacheca.get(id).getOptions();
 		return null;
@@ -231,10 +244,24 @@ public class ProposalHandler implements Serializable{
 	 * @param users gli utenti da invitare alla proposta
 	 * @return True - se gli inviti sono stati inviati correttamente<br>False - se gli inviti non sono stati inviati
 	 */
-	public synchronized boolean inviteTo(int id, ArrayList<User> users) {
+	public boolean inviteTo(int id, ArrayList<User> users) {
 		if(bacheca.contains(id)) {
 			return bacheca.get(id).invite(id, users);
 		}
 		return false;
 	} 
+	
+	/**
+	 * restituisce tutte le proposte contenute nel gestore
+	 * @return le proposte contenute nel gestore di proposte
+	 */
+	public ArrayList<Proposal> getAll() {
+		ArrayList<Proposal> all = new ArrayList<Proposal>();
+		all.addAll(bacheca);
+		all.addAll(proposteChiuse);
+		all.addAll(proposteConcluse);
+		all.addAll(proposteFallite);
+		all.addAll(proposteRitirate);
+		return all;
+	}
 }

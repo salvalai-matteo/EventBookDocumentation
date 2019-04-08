@@ -145,8 +145,8 @@ public enum Commands {
 				if(obj!=null)
 					newValue = obj.toString();
 				String confirm = ctx.getIOStream()
-										.read("Proposta :" + id + ", Campo :" + field.getName() + ", nuovo valore: " + newValue 
-												+ " [y/n]");
+										.read("Proposta : " + id + ", Campo : " + field.getName() + ", nuovo valore: " + newValue 
+												+ " [y/n]>");
 				if(confirm.equalsIgnoreCase("n")) {
 					valid = true;
 					ctx.getIOStream().writeln("La modifica è stata annullata");
@@ -245,6 +245,7 @@ public enum Commands {
 		SHOW_NOTIFICATIONS("mostraNotifiche","Mostra le tue notifiche","mostraNotifiche", (ctx, args)->{
 			if(!checkNoParameter(ctx, args))
 				return false;
+			ctx.getProposalHandler().refresh();
 			if(ctx.getSession().noMessages()) 
 				ctx.getIOStream().writeln("Nessun messaggio.");
 			else
@@ -311,11 +312,16 @@ public enum Commands {
 		PARTICIPATE("partecipa","Partecipa ad una proposta in bacheca", "partecipa [id]",(ctx, args)->{
 			if(!checkOneParameter(ctx, args))
 				return false;
+			ctx.getProposalHandler().refresh();
 			int id = -1;
 			try {
 				id = Integer.parseInt(args[0]);
 			}catch(NumberFormatException e) {
 				ctx.getIOStream().writeln(StringConstant.INSERT_NUMBER);
+				return false;
+			}
+			if(!ctx.getProposalHandler().contains(id)) {
+				ctx.getIOStream().writeln("Proposta non trovata");
 				return false;
 			}
 			if(ctx.getProposalHandler().isOwner(id, ctx.getSession().getOwner())) {
@@ -326,8 +332,8 @@ public enum Commands {
 				ctx.getIOStream().writeln("Sei già iscritto a questa proposta");
 				return false;
 			}
-			if(!ctx.getProposalHandler().contains(id)) {
-				ctx.getIOStream().writeln("Proposta non trovata");
+			if(ctx.getProposalHandler().isFull(id)) {
+				ctx.getIOStream().writeln("La proposta è al completo");
 				return false;
 			}
 			OptionsSet pref = ctx.getProposalHandler().getPreferenze(id);
@@ -348,6 +354,7 @@ public enum Commands {
 		UNSUBSCRIBE("disiscrivi", "Cancella l'iscrizione ad una proposta aperta","disiscrivi",(ctx, args)->{
 			if(!checkNoParameter(ctx, args))
 				return false;
+			ctx.getProposalHandler().refresh();
 			User actualUser = ctx.getSession().getOwner();
 			if(ctx.getProposalHandler().countUserSubscription(actualUser) == 0) {
 				ctx.getIOStream().writeln("Non sei iscritto a nessuna proposta");
@@ -361,6 +368,10 @@ public enum Commands {
 				ctx.getIOStream().writeln(StringConstant.INSERT_NUMBER);
 				return false;
 			}
+			if(ctx.getProposalHandler().isOwner(id, actualUser)) {
+				ctx.getIOStream().writeln("Sei il propositore, non puoi disiscriverti. In caso prova a ritirarla");
+				return false;
+			}
 			if(!ctx.getProposalHandler().isSignedUp(id, actualUser)) {
 				ctx.getIOStream().writeln("Non sei iscritto a questa proposta");
 				return false;
@@ -369,7 +380,7 @@ public enum Commands {
 				ctx.getIOStream().writeln("La disiscrizione è andata a buon fine");
 				return true;
 			}else {
-				ctx.getIOStream().writeln("La disiscrizione NON è andata a buon fine");
+				ctx.getIOStream().writeln("La disiscrizione non è andata a buon fine");
 				return false;
 			}
 		}),
@@ -426,6 +437,7 @@ public enum Commands {
 		WITHDRAW_PROPOSAL("ritira", "Ritira una proposta in bacheca","ritira[id]", (ctx, args)->{
 			if(!checkOneParameter(ctx, args))
 				return false;
+			ctx.getProposalHandler().refresh();
 			int id = -1;
 			try {
 				id = Integer.parseInt(args[0]);
@@ -461,6 +473,7 @@ public enum Commands {
 		INVITE("invita", "Invita utenti ad una proposta","invita [id]",(ctx, args)->{
 			if(!checkOneParameter(ctx, args))
 				return false;
+			ctx.getProposalHandler().refresh();
 			int id = -1;
 			try {
 				id = Integer.parseInt(args[0]);
@@ -484,25 +497,28 @@ public enum Commands {
 			}
 			ctx.getIOStream().writeln("Potenziali utenti da invitare: " + userList.toString());
 			String confirm = ctx.getIOStream().read("Vuoi mandare un invito a tutti?" + "\n[y|n]> ");
+			ArrayList<User> receivers = new ArrayList<>();
+			receivers.addAll(userList);
 			if(confirm.equalsIgnoreCase("n")) {							
-				ArrayList<User> receivers = new ArrayList<>();
 				userList.stream()
 							.forEach(( u )->{
 								String answer = ctx.getIOStream().read("Invitare " + u.getName() + " ? [y|n]> ");
-								if(answer.equalsIgnoreCase("y")) {
-									receivers.add(u);
+								if(answer.equalsIgnoreCase("y")) 
 									ctx.getIOStream().writeln("L'utente verrà notificato");
-								}else if(answer.equalsIgnoreCase("n"))
+								else if(answer.equalsIgnoreCase("n")) {
 									ctx.getIOStream().writeln(u.getName() + " non verrà invitato ");
-								else
+									receivers.remove(u);
+								}else {
 									ctx.getIOStream().writeln("Inserito valore non valido. L'utente non verrà notificato");
+									receivers.remove(u);
+								}
 							});
 			}else if(!confirm.equalsIgnoreCase("y")){
 				ctx.getIOStream().writeln("L'invio non verrà effettuato, non è stato inserito una conferma corretta");
 				return false;
 			}
-			if(ctx.getProposalHandler().inviteTo(id, userList)) {
-				ctx.getIOStream().writeln("Gli sono stati inviati con successo");
+			if(ctx.getProposalHandler().inviteTo(id, receivers)) {
+				ctx.getIOStream().writeln("Gli inviti sono stati inviati con successo");
 				return true;
 			}else {
 				ctx.getIOStream().writeln("Gli inviti non sono stati inviati");

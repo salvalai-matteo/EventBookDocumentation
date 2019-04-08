@@ -2,8 +2,6 @@ package main.commands;
 
 import java.io.Closeable;
 import java.io.IOException;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import proposals.ProposalHandler;
 import users.UserRepository;
@@ -20,14 +18,6 @@ public class Context implements Closeable{
 	private static final String NOTICEBOARD = "resource/bacheca.ser";
 	private static final String DATABASE = "resource/registrazioni.ser";
 
-	/**
-	 * Periodo fondamentale con il quale lavora il timer di refresh
-	 */
-	private static final long DELAY = 3600000;//60MIN
-	/**
-	 * Timer con il compito di fare refresh periodico del gestore di proposte
-	 */
-	private Timer refreshTimer;
 	/**
 	 * La sessione attuale
 	 */
@@ -54,13 +44,6 @@ public class Context implements Closeable{
 		this.session = null;
 		//logica di creazione degli argomenti del contesto
 		load();
-		
-		refreshTimer = new Timer("RefreshNoticeBoard");
-		refreshTimer.schedule(new TimerTask() {
-			public void run() {
-				proposalHandler.refresh();
-			}
-		}, DELAY, DELAY);
 	}
 
 	/**
@@ -79,6 +62,12 @@ public class Context implements Closeable{
 			proposalHandler = new ProposalHandler();
 			inOut.writeln("Caricata nuova bacheca");
 			}
+		
+		proposalHandler.getAll()
+						.stream()
+						.forEach((p)->p.getSubscribers()
+										.forEach((sub)->sub.setUser(database.getUser(sub.getName()))));
+		
 		inOut.writeln("Fine caricamento");
 		inOut.writeln("Pronto");
 		inOut.write(StringConstant.NEW_LINE + StringConstant.WAITING);
@@ -147,6 +136,5 @@ public class Context implements Closeable{
 	@Override
 	public void close() throws IOException {
 		save();
-		refreshTimer.cancel();
 	}
 }
