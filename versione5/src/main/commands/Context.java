@@ -50,26 +50,23 @@ public class Context implements Closeable{
 	 * Carica tutte le informazioni importanti legate al contesto
 	 */
 	private void load() {
-		inOut.writeln("Caricamento database ...");
+		inOut.writeln("Caricamento ...");
 		database = (UserRepository)new FileHandler().load(DATABASE);
 		if(database == null) {
 			database = new UserRepository();
 			inOut.writeln("Caricato nuovo database");
 			}
-		inOut.writeln("Caricamento bacheca ...");
 		proposalHandler = (ProposalHandler)new FileHandler().load(NOTICEBOARD);
 		if(proposalHandler == null) {
 			proposalHandler = new ProposalHandler();
 			inOut.writeln("Caricata nuova bacheca");
 			}
-		
 		proposalHandler.getAll()
 						.stream()
 						.forEach((p)->p.getSubscribers()
 										.forEach((sub)->sub.setUser(database.getUser(sub.getName()))));
-		
 		inOut.writeln("Fine caricamento");
-		inOut.writeln("Pronto");
+		inOut.writeln("(inserisci 'help' per vedere i comandi a tua disposizione)");
 		inOut.write(StringConstant.NEW_LINE + StringConstant.WAITING);
 	}
 	
@@ -77,10 +74,12 @@ public class Context implements Closeable{
 	 * Salva tutte le informazioni importanti del contesto in modo permanente
 	 */
 	private void save() {
-		inOut.write("Salvataggio bacheca... ");
-		inOut.writeln((new FileHandler().save(NOTICEBOARD, proposalHandler))? StringConstant.SAVE_COMPLETED : StringConstant.SAVE_FAILED);
-		inOut.write("Salvataggio database... ");
-		inOut.writeln((new FileHandler().save(DATABASE, database))? StringConstant.SAVE_COMPLETED : StringConstant.SAVE_FAILED);
+		inOut.write("Salvataggio ... ");
+		FileHandler fh = new FileHandler();
+		if(fh.save(NOTICEBOARD, proposalHandler) && fh.save(DATABASE, database))
+			inOut.writeln(StringConstant.SAVE_COMPLETED);
+		else
+			inOut.writeln(StringConstant.SAVE_FAILED);
 	}
 	/**
 	 * Restituisce lo stream su cui fare operazioni di ingresso/uscita
@@ -91,14 +90,14 @@ public class Context implements Closeable{
 	}
 	/**
 	 * Restituisce l'attuale sessione
-	 * @return
+	 * @return la sessione attuale
 	 */
 	public Session getSession() {
 		return session;
 	}
 	/**
 	 * Inizializza la sessione legandola all'utente di cui si è inserito il nomignolo se questo è registrato nel databse
-	 * @param nomignolo
+	 * @param nomignolo nomignolo dell'utente
 	 * @return True - la sezione è stata inizializzata correttamente<br>False - la sessione non è stata inizializzata correttamente
 	 */
 	public boolean newSession(String nomignolo) {
