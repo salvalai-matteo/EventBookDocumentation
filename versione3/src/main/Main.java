@@ -96,6 +96,11 @@ public class Main {
 			}
 		System.out.println("Fine caricamento");
 		
+		noticeBoard
+			.stream()
+				.forEach((p)->p.getAllSubscribers()
+					.forEach((u)-> u.setPrivateSpace(database.getUser(u.getName()).getPrivateSpace())));
+		
 	}
 	/**
 	 * Salva la bacheca e il database

@@ -2,6 +2,7 @@ package users;
 
 import java.io.Serializable;
 
+
 /**La classe User ha il compito di fornire una struttura adatta a gestire un fruitore del social network.<br>
  * Ad ogni fruitore è associato, oltre al nome, uno spazio personale inizialmente vuoto<br>
  * @author Matteo Salvalai [715827], Lorenzo Maestrini[715780], Jacopo Mora [715149]
@@ -59,6 +60,21 @@ public class User implements Serializable{
 	 */
 	public boolean equals(User f) {
 		return name.equals(f.name);
+	}
+
+	/**
+	 * Imposta lo spazio personale dell'utente con lo spazio personale dell'utente passato come parametro
+	 * @param personalSpace spazio personale da impostare all'utente
+	 */
+	public void setPrivateSpace(PersonalSpace personalSpace) {
+		privateSpace = personalSpace;
+	}
+	
+	/**Restituisce lo spazio personale dell'utente
+	 * @return spazio personale dell'utente
+	 */
+	public PersonalSpace getPrivateSpace() {
+		return privateSpace;
 	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()

@@ -203,6 +203,18 @@ public class Proposal implements Serializable{
 		return isOwner(user) || subscribers.stream()
 											.anyMatch(( s )->s.equals(user));
 	}
+	
+	/**
+	 * Restituisce la lista di tutti gli iscritti alla proposta, compreso il proprietario
+	 * @return iscritti alla proposta, proprietario compreso
+	 */
+	public ArrayList<User> getAllSubscribers(){
+		ArrayList<User> userList = new ArrayList<User>();
+		userList.addAll(subscribers);
+		userList.add(owner);
+		return userList;
+	}
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
@@ -211,5 +223,6 @@ public class Proposal implements Serializable{
 					+ "\tIscritti: " + subNumber()
 					+ "\n\t" +subscribers.toString() + "\n";
 	}
+	
 
 }
