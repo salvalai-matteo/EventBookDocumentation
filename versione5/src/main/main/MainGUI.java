@@ -138,6 +138,8 @@ public class MainGUI {
 		});
 		
 		textFieldCommands.requestFocus();
+		
+
 	}
 	
 	private void sendCommand() {
@@ -146,7 +148,8 @@ public class MainGUI {
 			textArea.append(command + "\n");
 			commandsHistory.add(command);
 			handler.run(command);
-		}
+			textArea.setCaretPosition(textArea.getSelectionEnd());
+		}		
 		textFieldCommands.setText("");
 		textFieldCommands.requestFocus();
 	}
