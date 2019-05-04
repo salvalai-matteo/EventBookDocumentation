@@ -17,8 +17,8 @@ import utility.*;
  *
  */
 public class Main {
-	private static final String NOTICEBOARD = "resource/bacheca.ser";
-	private static final String DATABASE = "resource/registrazioni.ser";
+	private static final String NOTICEBOARD = "resources/bacheca.ser";
+	private static final String DATABASE = "resources/registrazioni.ser";
 	
 	private static final String NEW_LINE = "\n";
 	private static final String WELCOME = "Welcome to EventBook";

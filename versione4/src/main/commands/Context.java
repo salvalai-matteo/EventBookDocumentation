@@ -18,8 +18,8 @@ import utility.Session;
  */
 public class Context implements Closeable{
 	
-	private static final String NOTICEBOARD = "resource/bacheca.ser";
-	private static final String DATABASE = "resource/registrazioni.ser";
+	private static final String NOTICEBOARD = "resources/bacheca.ser";
+	private static final String DATABASE = "resources/registrazioni.ser";
 
 	private static final long DELAY = 3600000;//60MIN
 	
