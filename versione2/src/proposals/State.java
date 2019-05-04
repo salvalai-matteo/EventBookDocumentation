@@ -60,7 +60,7 @@ public enum State implements Serializable{
 		 * @see EventBook.versione2.fruitore.Stato#canSubscribe(EventBook.versione2.Proposta)
 		 */
 		public boolean canSignUp(Proposal p) {
-			return p.subNumber() < Integer.class.cast(p.getValue(FieldHeading.NUMEROPARTECIPANTI.getName())) - 1; 
+			return p.subNumber() < Integer.class.cast(p.getValue(FieldHeading.NUMEROPARTECIPANTI.getName())); 
 		}
 		/* (non-Javadoc)
 		 * @see EventBook.versione2.fruitore.Stato#transiziona(EventBook.versione2.Proposta)
