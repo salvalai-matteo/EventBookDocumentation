@@ -30,12 +30,12 @@ public class FieldSetFactory {
 	 */
 	private FieldSetFactory() {
 		types = new HashMap<String, Supplier<FieldSet>>();
-		types.put(CategoryHeading.FOOTBALLMATCH.getName().toUpperCase(), ()->{
+		/*types.put(CategoryHeading.FOOTBALLMATCH.getName().toUpperCase(), ()->{
 			FieldSet cc = commonSet();
 			cc.add(new Field<>(FieldHeading.GENERE));
 			cc.add(new Field <>(FieldHeading.FASCIA_ETA));
 			return cc;
-		});
+		});*/
 		//Aggiunta per la versione 4
 		types.put("PROFILE", ()->{
 			FieldSet cc = new FieldSet();
@@ -45,13 +45,13 @@ public class FieldSetFactory {
 			return cc;
 		});
 		//Aggiunta per la versione 5
-		types.put(CategoryHeading.CONCERT.getName().toUpperCase(), ()->{
+		/*types.put(CategoryHeading.CONCERT.getName().toUpperCase(), ()->{
 			FieldSet cc = commonSet();
 			cc.add(new Field<>(FieldHeading.BACKSTAGE_PASS));
 			cc.add(new Field <>(FieldHeading.MEET_AND_GREET));
 			cc.add(new Field <>(FieldHeading.MERCHANDISE));
 			return cc;
-		});
+		});*/
 	}
 	/**Metodo per ottenere un'istanza della factory di contenitori<br>
 	 * Necessario per l'implementazione del design pattern singleton
@@ -68,7 +68,7 @@ public class FieldSetFactory {
 	/**Semplifica la creazione di contenitori di campi contenenti campi standard
 	 * @return un contenitore con i campi standard
 	 */
-	private FieldSet commonSet() {
+	public FieldSet commonSet() {
 		FieldSet cc = new FieldSet();
 		cc.add(new Field <>(FieldHeading.TITOLO));
 		cc.add(new Field <>(FieldHeading.NUMPARTECIPANTI));

@@ -1,5 +1,8 @@
 package categories;
 
+import fields.Field;
+import fields.FieldHeading;
+import fields.FieldSet;
 import fields.FieldSetFactory;
 
 /**
@@ -17,13 +20,21 @@ public class Concert extends Category{
 	public Concert() {
 		super();
 		heading = CategoryHeading.CONCERT;
-		fields = FieldSetFactory.getInstance().getSet(CategoryHeading.CONCERT.getName());
+		//fields = FieldSetFactory.getInstance().getSet(CategoryHeading.CONCERT.getName());
+		fields = FieldSetFactory.getInstance().commonSet();
+		fields.add(new Field<>(FieldHeading.BACKSTAGE_PASS));
+		fields.add(new Field <>(FieldHeading.MEET_AND_GREET));
+		fields.add(new Field <>(FieldHeading.MERCHANDISE));
 	}
 	/* (non-Javadoc)
 	 * @see categories.Category#reset()
 	 */
 	public Category reset() {
-		fields = FieldSetFactory.getInstance().getSet(CategoryHeading.CONCERT.getName());
+		//fields = FieldSetFactory.getInstance().getSet(CategoryHeading.CONCERT.getName());
+		fields = FieldSetFactory.getInstance().commonSet();
+		fields.add(new Field<>(FieldHeading.BACKSTAGE_PASS));
+		fields.add(new Field <>(FieldHeading.MEET_AND_GREET));
+		fields.add(new Field <>(FieldHeading.MERCHANDISE));
 		super.reset();
 		return this;
 	}
