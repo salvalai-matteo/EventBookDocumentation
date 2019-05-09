@@ -17,6 +17,15 @@ public class FootballMatch extends Category{
 	public FootballMatch() {
 		super();
 		heading = CategoryHeading.FOOTBALLMATCH;
+		addSpecificFields();
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * @see categories.Category#addSpecificFields()
+	 */
+	@Override
+	public void addSpecificFields() {
 		fields.add(new Field<>(FieldHeading.GENERE));
 		fields.add(new Field <>(FieldHeading.FASCIA_ETA));
 	}

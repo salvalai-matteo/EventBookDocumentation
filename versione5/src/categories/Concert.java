@@ -19,19 +19,27 @@ public class Concert extends Category{
 	public Concert() {
 		super();
 		heading = CategoryHeading.CONCERT;
-		fields.add(new Field<>(FieldHeading.BACKSTAGE_PASS));
-		fields.add(new Field <>(FieldHeading.MEET_AND_GREET));
-		fields.add(new Field <>(FieldHeading.MERCHANDISE));
+		addSpecificFields();
 	}
 	/* (non-Javadoc)
 	 * @see categories.Category#reset()
 	 */
 	public Category reset() {
-		fields = FieldSetFactory.getInstance().commonSet();
+		fields = new FieldSetFactory().commonSet();
 		fields.add(new Field<>(FieldHeading.BACKSTAGE_PASS));
 		fields.add(new Field <>(FieldHeading.MEET_AND_GREET));
 		fields.add(new Field <>(FieldHeading.MERCHANDISE));
 		super.reset();
 		return this;
+	}
+	/*
+	 * (non-Javadoc)
+	 * @see categories.Category#addSpecificFields()
+	 */
+	@Override
+	public void addSpecificFields() {
+		fields.add(new Field<>(FieldHeading.BACKSTAGE_PASS));
+		fields.add(new Field <>(FieldHeading.MEET_AND_GREET));
+		fields.add(new Field <>(FieldHeading.MERCHANDISE));
 	}
 }

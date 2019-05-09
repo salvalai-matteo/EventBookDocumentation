@@ -35,8 +35,8 @@ public abstract class Category implements Cloneable,Serializable{
 	/**
 	 * Costruttore che istanzia la lista di campi 'fields' con i campi comuni
 	 */
-	Category(){
-		fields = FieldSetFactory.getInstance().commonSet();
+	public Category(){
+		fields = new FieldSetFactory().commonSet();
 	}
 	
 	//Metodi
@@ -137,6 +137,11 @@ public abstract class Category implements Cloneable,Serializable{
 	}
 	
 	/**
+	 * Aggiunge i campi specifici all'insieme di campi comuni della Categoria
+	 */
+	public abstract void addSpecificFields();
+	
+	/**
 	 * Controlla se le due categorie sono uguali
 	 * @param c categoria da confrontare
 	 * @return True se uguali<br>False altrimenti
@@ -205,4 +210,5 @@ public abstract class Category implements Cloneable,Serializable{
 									.toArray(new FieldHeading[0])
 							);
 	}
+	
 }
