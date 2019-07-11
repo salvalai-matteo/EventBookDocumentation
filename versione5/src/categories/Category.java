@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 
 import fields.FieldHeading;
 import fields.FieldSet;
+import fields.FieldSetFactory;
 import proposals.OptionsSet;
 
 /**
@@ -29,10 +30,16 @@ public abstract class Category implements Cloneable,Serializable{
 	/**
 	 * Contiene l'intestazione della categoria
 	 */
-	protected CategoryHeading heading;
+	protected CategoryHeading heading;	
+	
+	/**
+	 * Costruttore che istanzia la lista di campi 'fields' con i campi comuni
+	 */
+	public Category(){
+		fields = new FieldSetFactory().commonSet();
+	}
 	
 	//Metodi
-	
 	/**
 	 * Visualizza la struttura della categoria e di quello che può contenere (in forma testuale).<br>
 	 * Non visualizza un loro eventuale contenuto.
@@ -130,6 +137,11 @@ public abstract class Category implements Cloneable,Serializable{
 	}
 	
 	/**
+	 * Aggiunge i campi specifici all'insieme di campi comuni della Categoria
+	 */
+	public abstract void addSpecificFields();
+	
+	/**
 	 * Controlla se le due categorie sono uguali
 	 * @param c categoria da confrontare
 	 * @return True se uguali<br>False altrimenti
@@ -198,4 +210,5 @@ public abstract class Category implements Cloneable,Serializable{
 									.toArray(new FieldHeading[0])
 							);
 	}
+	
 }

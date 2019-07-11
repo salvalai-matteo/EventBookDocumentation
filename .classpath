@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
+	<classpathentry kind="src" path="versione5/src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="versione1/EventBook/src"/>
-	<classpathentry kind="src" path="versione5"/>
-	<classpathentry kind="src" path="versione2/EventBook/src"/>
-	<classpathentry kind="src" path="versione3/EventBook/src"/>
-	<classpathentry kind="src" path="versione4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="output" path="versione1/EventBook/bin"/>
 </classpath>

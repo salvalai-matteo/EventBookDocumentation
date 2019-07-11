@@ -30,7 +30,7 @@ public class Profile implements Serializable{
 	 * @param name nome del profilo
 	 */
 	public Profile(String name) {
-		fields = FieldSetFactory.getInstance().getSet("Profile");
+		fields = new FieldSetFactory().profile();
 		fields.setValue(FieldHeading.NOMIGNOLO.getName(), name);
 	}
 	/**

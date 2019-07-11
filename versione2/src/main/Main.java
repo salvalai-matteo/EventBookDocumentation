@@ -15,8 +15,8 @@ import utility.*;
  *
  */
 public class Main {
-	private static final String NOTICEBOARD = "resource/bacheca.ser";
-	private static final String DATABASE = "resource/registrazioni.ser";
+	private static final String NOTICEBOARD = "resources/bacheca.ser";
+	private static final String DATABASE = "resources/registrazioni.ser";
 	
 	private static final String NEW_LINE = "\n";
 	private static final String WELCOME = "Welcome to EventBook";
@@ -236,11 +236,14 @@ public class Main {
 			if(!abort) {
 				System.out.print("Inserisci il nome del campo che vuoi modificare : ");
 				String newField = in.nextLine();
-				try {
-					field = FieldHeading.valueOf(newField.toUpperCase());
-				}catch(IllegalArgumentException e) {
+				if(Stream.of(FieldHeading.values()).anyMatch((fh)->fh.getName().equalsIgnoreCase(newField)))
+					field = Stream.of(FieldHeading.values())
+							.filter((fh)->fh.getName().equalsIgnoreCase(newField))
+							.findAny()
+							.get();
+				else {
 					System.out.println("Il nome inserito non appartiene ad un campo");
-					abort = true;
+					abort =  true;
 				}
 			}
 			//inserisci valore del campo da modificare
